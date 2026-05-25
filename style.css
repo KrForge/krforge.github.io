@@ -1,3 +1,7 @@
+@font-face {
+    font-family: Win7;
+    src: url(Resources/Win7.ttf);
+}
 
 :root {
     --topbar-top-top-color: #fefefe;
@@ -34,7 +38,7 @@
     color: black;
     margin: 0px;
     padding: 0px;
-    font-family: Arial;
+    font-family: Win7;
     text-decoration: none;
 
     -webkit-user-select: none;
