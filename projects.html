@@ -11,34 +11,36 @@
     <div id="Topbar">
     </div>
     <div class="Content">
-        <div id="Sidebar">
-        </div>
         <div class="BodyContent" id="Projects">
             <div class="SoftwareBanner">
+                <div style="display: flex; align-items: center;">
+                    <img src="Resources/HighRes/Projects.png" class="SoftwareBannerImg">
+                    Projects
+                </div>
                 <img src="Resources/Glass.png" class="SoftwareBannerStreaks">
-                <img src="Resources/HighRes/Projects.png" class="SoftwareBannerImg">
-                Projects
             </div>
-            <div class="SoftwarePane" id="PrioritySoftwarePane">
-                <a 
-                    class="SoftwareButton" id="PrioritySoftwareButton" href="projects.rebriefcase.html"
-                    data-status-img="Resources/HighRes/Software/Briefcase.png"
-                    data-status-name="ReBriefcase"
-                    data-status-type="Project"
-                >
-                    <img src="Resources/HighRes/Software/Briefcase.png">
-                    <div class="SoftwareButtonText">
-                        <p class="SoftwareButtonTitle">
-                            ReBriefcase
-                        </p>
-                        <p class="SidebarButtonDesc">
-                            Aims to recreate the briefcases found in Windows 7, with better conflict detections and a cleaner UI. Not compatable with native briefcases.
-                        </p>
+            <div class="SiteBodyDivider"></div>
+                <div class="SiteColumns" id="DedicatedPageColumns">
+                    <div class="LeftColumn">
+                        <div class="NewsPane" id="DedicatedPageNews">
+                            <p>This is where you can find projects I release.</p>
+                        </div>
                     </div>
-                </a>
+                    <div class="RightColumn">
+                        <div class="SoftwarePane", id="PrioritySoftwarePane">
+                            <a href="projects.rebriefcase.html">
+                                <div class="Subpane" id="SoftwarePane">                                       
+                                    <img src="Resources/HighRes/Software/Briefcase.png">
+                                    <div class="ShoutoutPaneBoxText">
+                                        <h2>ReBriefcase</h2>
+                                        <p>A simple program made to recreate the functionality of Windows briefcases that can be found in Windows 7.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="Statusbar">
     </div>
 </body>

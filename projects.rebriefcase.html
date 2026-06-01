@@ -5,36 +5,97 @@
     </title>
     <link rel="icon" type="image/x-icon" href="Resources/Profile.png">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="Topbar">
-    </div>
+    <div id="Topbar"></div>
     <div class="Content">
-        <div id="Sidebar">
-        </div>
-        <div class="BodyContent" id="ProjectsReBriefcase">
-            <div class="SoftwareBanner" id="SingleSoftwareBanner">
-                <img src="Resources/Glass.png" class="SoftwareBannerStreaks">
-                <div class="SoftwareBannerContent">
-                    
-                    <img src="Resources/HighRes/Software/Briefcase.png">
-                    <p>
-                        ReBriefcase
-                    </p>
-                </div>
-            </div>
-            <div class="SoftwareBodyContent">
-                <div class="LeftPane">
-                    <div class="TopicPane" id="SoftwareTopic">
-                        <h1 class="PaneHeader">
-                            What is ReBriefcase?
-                        </h1>
-                        <p>
-                            ReBriefcase is a small tool that lives in your context menu. What it does is recreate the briefcases that could be found on Windows 7.
+        <div class="BodyContent" id="Projects">
+            <div class="HomeBanner">
+                <img src="Resources/Banners/ReBriefcaseBanner.png">
+
+                <img src="Resources/Glass.png" class="HomeBannerGlass">
+                <div class="HomeBannerContent">
+                    <div class="HomeBannerNamePlate">
+                        <img src="Resources/HighRes/Software/Briefcase.png">
+                        <p class="NamePlateName">
+                            ReBriefcase
+                        </p>
+                        <p class="NamePlateTag">
+                            Windows Briefcases, Reborn
                         </p>
                     </div>
+                </div>
+            </div>
+            
+            <div class="SiteBodyDivider" id="SoftwareDivider">
+                <div class="DownloadInfo">
+                    <div class="Info">
+                        <img src="Resources/HighRes/Info.png">
+                        <div class="InfoStat">
+                            <p>Version</p>
+                            <p id="DownloadVersion">
+                                Loading...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="Info">
+                        <img src="Resources/HighRes/Time.png">
+                        <div class="InfoStat">
+                            <p>Last Updated</p>
+                            <p id="ReleaseDate">
+                                Loading...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://github.com/KrForge/ReBriefcase/releases/latest/download/ReBriefcaseInstaller.exe", target="_blank">
+                    <button id="DownloadButton" data-repo="ReBriefcase">
+                        Download Latest
+                    </button>
+                </a>
+            </div>
+            <div class="SiteColumns" id="SoftwarePageColumns">
+                <div class="LeftColumn">
+                    <div class="NewsPane" id="DedicatedPageNews">
+                        <h1>About ReBriefcase</h1>
+                        <div class="NewsPaneDivider"></div>
+                        <p>ReBriefcase is a small piece of software made to replicate the functionality of the briefcasese seen in Windows 7.</p>
+                        <p>I chose to make ReBriefcase because I used Windows 7 Briefcases, and Microsoft decided to phase it out, and even removing it in later Windows 10 builds.</p>
+                        <p>I have found other replicas online, but they tended to only bring back their look in Explorer, but left out the sync engine, and required messing with system files.</p>
+                        <p>ReBriefcase does not touch system files, and can be installed like a normal program. It also has a sync engine, which is the whole point of briefcases.</p>
+                        
+                        <div class="NewsPaneDivider"></div>
+                        <h1 style="color: #bd1049;">Known Bugs</h1>
+                        <div class="NewsPaneDivider"></div>
+                        
+                        <p>
+                            As far as I know ReBriefcase is bug free.
+                        </p>
+                        <p>
+                            Found a bug? Report it on ReBriefcase's GitHub repo. You can find my GitHub in the contacts page.
+                        </p>
+                        <div style="flex: 1;"></div>
+                        <div class="NewsPaneDivider"></div>
+                        <h3>Disclaimer</h3>
+                        <div class="NewsPaneDivider"></div>
+
+                        <p>
+                            ReBriefcase is still considered "Beta" software. While known bugs have been ironed out, bugs can very well still exist. It is reccomended you keep a backup of your data when using ReBriefcase, and I am not responsible for any data loss you may encounter when using it.
+                        </p>
+                    </div>
+                </div>
+                <div class="RightColumn">
+                    <h5>It was 4am when I got to remaking this part, I was very tired, and just copied-pasted the html from the old site. Give me a little while to make this section better please</h5>
                     <div class="InfoPane">
+                        <h2>Installing ReBriefcase</h2>
+                        <div class="InfoRow">
+                            <div>
+                                <p>Installing ReBriefcase is as easy as clicking through the installer, no restart or signout is required to install rebriefcase.</p>
+                                <p>After installing ReBriefcase, a new button will apear in your context menu when you click on folders. This button is how you use ReBreifcase</p>
+                            </div>
+                            <img src="Resources/Screenshots/projects/ReBriefcase/Screenshot_04.png">
+                        </div>
                         <h2>How to use ReBriefcase</h2>
                         <div class="InfoRow">
                             <img src="Resources/Screenshots/projects/ReBriefcase/Screenshot_01.png">
@@ -66,65 +127,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="RightPane">
-                    <div>
-                        <div class="NewsPane">
-                            <h1 class="PaneHeader">
-                                Project News
-                            </h1>
-                            <li>
-                                ReBriefcase is nearing completion
-                            </li>
-                            <li>
-                                ReBriefcase 2.0 has been published
-                            </li>
-                        </div>
-                        <div class="NewsPane" id="SoftwareBugsPane">
-                            <h1 class="PaneHeader" id="Critical">
-                                Known Bugs
-                            </h1>
-                            <li>
-                                Unknown
-                            </li>
-                        </div>
-                        <div class="TopicPane">
-                            <h1 class="PaneHeader">
-                                Download
-                            </h1>
-                            <div class="DownloadPane">
-                                <a
-                                    href="https://github.com/KrForge/ReBriefcase/releases/latest/download/ReBriefcaseInstaller.exe" download
-                                    data-status-img="Resources/Platforms/Download.png"
-                                    data-status-name="Download ReBriefcase"
-                                    data-status-type=".EXE file"
-                                >
-                                    <button class="DownloadButton">
-                                        <img src="Resources/Platforms/Download.png">
-                                        ReBriefcase
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="SidebarSpacer"></div>
-                    <div class="Disclaimer">
-                        <div style="flex: 1;">
-                            <h5>
-                                ReBriefcase is still considered "Beta" software. While obvious bugs have been sorted out, it is still possible that data can be lost. KrForge is not responsible if valuable data has been lost to ReBriefcase.
-                            </h5>
-                        </div>
-                        <div class="CopyrightInfo">
-                            <p>
-                                KrForge 2026
-                            </p>
-                            <img src="Resources/Profile.png">
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <div id="Statusbar">
-    </div>
-
 </body>

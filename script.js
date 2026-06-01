@@ -1,78 +1,12 @@
-
-let statusBarImg;
-let statusBarTxtName;
-let statusBarTxtType;
-let statusBarTxtExtra;
-
 function loadBars() {
-    fetch("Resources/GlobalContent/sidebar.html").then(res => res.text()).then(data => {
-        document.getElementById("Sidebar").innerHTML = data;
-        
-        let links = document.getElementById("Sidebar").querySelectorAll("a");
-        const currentPage = window.location.pathname.split("/").pop();
-
-        links.forEach(link => {
-            const sidebarButton = link.querySelector("button");
-
-            if (link.getAttribute("href") === currentPage && sidebarButton.classList.contains("SidebarButton")) {
-                sidebarButton.id = "SidebarButtonActive";
-            }
-        });
-    });
-    
-
     fetch("Resources/GlobalContent/topbar.html").then(res => res.text()).then(data => {
         document.getElementById("Topbar").innerHTML = data;
     });
 
-    fetch("Resources/GlobalContent/statusbar.html").then(res => res.text()).then(data => {
-        document.getElementById("Statusbar").innerHTML = data;
-        
-        statusBarImg = document.querySelector(".StatusbarImg");
-        statusBarTxtName = document.querySelector(".StatusbarObjectInfoName");
-        statusBarTxtType = document.querySelector(".StatusbarObjectInfoType");
-        statusBarTxtExtra = document.querySelector(".StatusbarObjectInfoExtra");
-        
-        document.dispatchEvent(new Event("StatusLoaded"));
-    });
-    
+    document.dispatchEvent(new Event("SiteLoaded"));
 }
 
 loadBars();
-
-document.addEventListener("StatusLoaded", () => {
-    updateStatusBarInfo();
-});
-
-// Statusbar
-
-async function updateStatusBarInfo(ImgPath = "", Name = "", Type = "", Extra = "") {
-    statusBarImg.src = ImgPath;
-    statusBarTxtName.innerText = Name;
-    statusBarTxtType.innerText = Type;
-    statusBarTxtExtra.innerText = Extra;
-}; 
-
-document.addEventListener("mouseover", (e) => {
-    const el = e.target.closest("[data-status-img]");
-
-    if (el) {
-        updateStatusBarInfo(
-            el.dataset.statusImg,
-            el.dataset.statusName,
-            el.dataset.statusType,
-            el.dataset.statusExtra
-        )
-    }
-});
-
-document.addEventListener("mouseout", (e) => {
-    const el = e.target.closest("[data-status-img]");
-
-    if (el) {
-        updateStatusBarInfo()
-    }
-});
 
 // Home animation
 const HomeAniIcons = [
@@ -86,14 +20,13 @@ const HomeAniRows = document.querySelectorAll(".AnimationRow");
 
 function getNeededHomeAniData() {
     if (HomeAniRows.length > 0) {
-        return [HomeAniRows[0].offsetHeight, HomeAniRows[0].offsetWidth - 200];
+        return [HomeAniRows[0].offsetHeight, HomeAniRows[0].offsetWidth];
     } else {
         return [null, null];
     }
 }
 
 let HomeIconWidth = getNeededHomeAniData()[0];
-// 200 is the width of the sidebar in pixels, and is fixed
 let HomeRowWidth = getNeededHomeAniData()[1];
 let ActiveHomeIcons = [];
 
@@ -224,3 +157,60 @@ if (HomeAniRows.length !== 0) {
     initHomeAni();
     animateHomeIcons();
 }
+
+// Get Github version number
+async function loadRepoInfo(repo) {
+    let targetRepo = "https://api.github.com/repos/KrForge/";
+    targetRepo = targetRepo + repo + "/releases/latest";
+
+    const response = await fetch(
+        targetRepo
+    );
+
+    const release = await response.json();
+
+    const version = release.name;
+    const publishDate = release.published_at;
+    
+    const time = convertTimeToReadable(publishDate);
+
+    document.getElementById("DownloadVersion").textContent = version;
+    document.getElementById("ReleaseDate").textContent = time;
+}
+
+function convertTimeToReadable(dateString) {
+    const now = new Date();
+    const published = new Date(dateString);
+
+    const seconds = Math.floor((now - published) / 1000);
+    
+    const units = [
+        { name: "year",   seconds: 31536000 },
+        { name: "month",  seconds: 2592000 },
+        { name: "week",   seconds: 604800 },
+        { name: "day",    seconds: 86400 },
+        { name: "hour",   seconds: 3600 },
+        { name: "minute", seconds: 60 }
+    ];
+
+    for (const unit of units) {
+        const count = Math.floor(seconds / unit.seconds);
+
+        if (count >= 1) {
+            return `${count} ${unit.name}${count !== 1 ? "s" : ""} ago`;
+        }
+    }
+
+    return "Just now";
+}
+
+function getIsDownloadButtonAvalible() {
+    let downloadButton = document.getElementById("DownloadButton");
+
+    if (downloadButton !== null) {
+        let repo = downloadButton.getAttribute("data-repo");
+        loadRepoInfo(repo);
+    }
+}
+
+getIsDownloadButtonAvalible();

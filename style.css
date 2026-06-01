@@ -3,20 +3,26 @@
     src: url(Resources/Win7.ttf);
 }
 
-:root {
-    --topbar-top-top-color: #fefefe;
-    --topbar-top-bot-color: #e5eaf5;
-    --topbar-mid-color: #d4dbee;
-    --topbar-bot-color: #e1e6f6;
-    --topbar-bor-color: #b6bccc;
-    --topbar-sha-color: #f0f0f0;
+.example::-webkit-scrollbar {
+  display: none;
+}
 
-    --topbar-height: 31px;
+:root {
+    --brand-color: #542ebb;
+
+    --topbar-top-top-color: #66666688;
+    --topbar-top-bot-color: #3d3d4288;
+    --topbar-mid-color: #2b2c3088;
+    --topbar-bot-color: #6d728088;
+    --topbar-bor-color: #b6bccc;
+    --topbar-sha-color: #0f0f0f;
+
+    --topbar-height: 40px;
     --sidebar-width: 200px;
     --statusbar-height: 55px;
 
-    --sidebar-color: #eaf0f8;
-    --sidebar-high-color: #f3f5f8;
+    --sidebar-color: #251c35;
+    --sidebar-high-color: #2d2142;
 
     --statusbar-color: #f1f5fb;
     
@@ -26,20 +32,36 @@
     --blue-button-bot-bot-color: #409acf;
     --blue-button-bor-all-color: #7eacd7;
     --blue-button-bor-bot-color: #5278c3;
-
     
+    --download-button-top-top-color: #64fc64;
+    --download-button-top-mid-color: #26962c;
+    --download-button-bot-mid-color: #155e13;
+    --download-button-bot-bot-color: #00ff0d;
+    --download-button-bor-all-color: #b6ffb6;
+    --download-button-bor-bot-color: #158b11;
+
     --gray-button-top-color: #dbebff;
     --gray-button-bot-color: #c9d5e7;
     --gray-button-bor-color: #b0bcdd;
+
+
+    --pane-top-top-color: #463869aa;
+    --pane-top-bot-color: #2b243aaa;
+    --pane-mid-color: #231f2eaa;
+    --pane-bot-color: #34265aaa;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;  /* Firefox */
 }
 
 * {
     background: transparent;
-    color: black;
+    color: white;
     margin: 0px;
     padding: 0px;
     font-family: Win7;
     text-decoration: none;
+    box-sizing: border-box;
 
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -57,18 +79,74 @@ button, a {
 .Topbar {
     width: 100%;
     height: 19px;
-    background: linear-gradient(180deg, var(--topbar-top-top-color) 0%, var(--topbar-top-bot-color) 35%, var(--topbar-mid-color) 35%, var(--topbar-bot-color) 100%);
+    background: linear-gradient(180deg, var(--topbar-top-top-color) 0%, var(--topbar-top-bot-color) 35%, var(--topbar-mid-color) 35%, var(--topbar-mid-color) 90%, var(--topbar-bot-color) 100%);
     box-sizing: border-box;
-    padding: 2px;
-    border: 1px solid var(--topbar-top-top-color);
-    border-bottom: 1px solid var(--topbar-bor-color);
     box-shadow: 0px 0px 1px 1px var(--topbar-sha-color);
+    border-bottom: 1px solid lightgray;
 }
 
 #SiteTopbar {
+    position: fixed;
+    z-index: 100;
     height: var(--topbar-height);
-    background: linear-gradient(180deg, var(--topbar-top-top-color) 0%, var(--topbar-top-bot-color) 50%, var(--topbar-mid-color) 50%, var(--topbar-bot-color) 100%);
-    border-bottom: 2px solid var(--topbar-bor-color);
+    display: flex;
+}
+
+.TopbarBlurBox {
+    display: flex;
+    backdrop-filter: blur(3px);
+    height: 100%;
+    width: 100%;
+}
+
+.TopbarBlurGradient {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(black 30%, transparent 100%);
+    position: absolute;
+}
+
+.TopbarContent {
+    z-index: 100;
+    background: linear-gradient(180deg, var(--topbar-top-top-color) 0%, var(--topbar-top-bot-color) 50%, var(--topbar-mid-color) 50%, var(--topbar-mid-color) 80%, var(--topbar-bot-color) 100%);
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.TopbarBranding {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(90deg, var(--brand-color) 0%, #00000000 100%);
+}
+
+.TopbarBranding img {
+    height: 100%;
+    margin-right: 5px;
+    filter: drop-shadow(0px 0px 5px black);
+}
+
+.TopbarButtonPanel {
+    margin: 5px 5px 0px 5px;
+    flex: 1;
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+    height: calc(100% - 5px);
+}
+
+#AboutButtonPanel {
+    display: flex;
+    justify-content: right;
+    width: 250px;
+    height: 100%;
+}
+
+#TopbarButtonContainer {
+    display: flex;
 }
 
 .TopbarButton {
@@ -76,7 +154,7 @@ button, a {
     border-radius: 3px;
     height: 100%;
     border: 1px solid transparent;
-    color: #2f2f2f;
+    font-weight: bold;
     padding: 0px 20px 0px 20px;
     box-sizing: border-box;
 }
@@ -86,24 +164,49 @@ button, a {
     border: 1px solid var(--gray-button-bor-color);
 }
 
-.Content {
-    width: 100%;
-    height: calc(100vh - var(--topbar-height) - var(--statusbar-height));
-    background: black;
-    display: flex;
+#TopbarMainButton {
+    width: 100px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+#TopbarMainButton:hover {
+    background: linear-gradient(cyan, #1670c4 43%, #043399 43%, var(--blue-button-top-mid-color));
+    border: 1px solid white;
+    box-shadow: 0px 0px 3px 1px var(--topbar-sha-color);
+}
+
+.TopbarButtonDropdown img {
+    height: 150%;
+}
+
+#TopbarAboutButton {
+    border: 0px;
+    border-radius: 0px;
+    border: 1px solid transparent;
+}
+
+#TopbarAboutButton:hover {
+    background: linear-gradient(cyan, #1670c4 50%, #043399 50%, var(--blue-button-top-mid-color));
+    border: 1px solid white;
+    box-shadow: 0px 0px 3px 1px var(--topbar-sha-color);
+    border-radius: 5px 0px 0px 5px;
 }
 
 /* ---------------------------- PAGE CSS DIFFERENCES ---------------------------- */
 
 /* ------------- Home -------------*/
 
+#Home {
+    display: flex;
+    flex-direction: column;
+}
+
 .HomeBanner {
-    height: 250px;
+    height: 300px;
     display: flex;
     align-items: center;
     overflow: hidden;
     position: relative;
-    border-bottom: 2px solid var(--topbar-bor-color);
 }
 
 .HomeBanner img {
@@ -118,6 +221,7 @@ button, a {
 
 
 .HomeBannerAnimation {
+    margin-top: calc(var(--topbar-height) * 2.3);
     position: absolute;
     width: 100%;
     height: inherit;
@@ -126,7 +230,7 @@ button, a {
 .AnimationRow {
     display: flex;
     width: 100%;
-    height: 30%;
+    height: 25%;
     margin: 5px 0px 8px 0px;
 }
 
@@ -142,7 +246,7 @@ button, a {
 }
 
 .AnimationBox img {
-    width: calc(100% - 10px);
+    width: 100%;
     padding: 5px;
 }
 
@@ -159,7 +263,6 @@ button, a {
     width: 100%;
     height: inherit;
     mask: radial-gradient(circle, black 15%, #00000011 50%, #00000077 100%);
-    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -170,6 +273,7 @@ button, a {
 }
 
 .HomeBannerNamePlate {
+    margin-top: var(--topbar-height);
     background: transparent;
 }
 
@@ -188,7 +292,6 @@ button, a {
     font-weight: bold;
     font-size: 35px;
     margin-bottom: 3px;
-    color: white;
 }
 
 .HomeBannerNamePlate .NamePlateTag {
@@ -202,76 +305,90 @@ button, a {
     display: flex;
 }
 
+.RightColumn {
+    width: calc(100% - 400px);
+}
 
+#ShoutoutPane {
+    margin-top: 5px;
+    height: calc(100% - 37px);
+    gap: 10px;
+}
 
-.TopicPane, #SoftwarePane {
-    flex: 1;
-    border: 1px solid var(--topbar-bor-color);
-    box-sizing: border-box;
+#ShoutoutPaneBox {
+    box-shadow: 0px 0px 4px 0px gold;
+}
+
+#ShoutoutPaneBox img {
+    height: 100%;
     padding: 10px;
-    border-radius: 5px;
-    background: linear-gradient(180deg, white 50%, var(--topbar-top-bot-color) 100%);
-    box-shadow: 0px 4px 5px 0px lightgray;
-    margin: 50px 50px 15px 50px;
+    filter: drop-shadow(0px 0px 5px black);
+    border-right: 1px dotted white;
+    margin-right: 10px;
 }
 
-.ShoutoutPane {
-    flex: 1;
-    max-width: 450px;
-    border: 2px solid gold;
-    box-sizing: border-box;
+#ShoutoutPaneBox h2 {
+    text-decoration: underline;
+}
+
+
+
+.HomeRightColumnLeft {
+    width: 50%;
+    margin: 0px 15px 0px 15px;
+}
+
+.HomeRightColumnRight {
+    width: 50%;
+    margin: 0px 15px 0px 0px;
+}
+
+#SoftwarePane {
+    height: 140px;
+}
+
+#SoftwarePane img {
+    height: 100%;
     padding: 10px;
-    border-radius: 5px;
-    background: linear-gradient(180deg, white 50%, var(--topbar-top-bot-color) 100%);
-    box-shadow: 0px 4px 15px 0px #ffae0054;
-    margin: 50px 50px 15px 50px;
+    filter: drop-shadow(0px 0px 5px black);
+    border-right: 1px dotted white;
+    margin-right: 10px;
 }
 
-#ShoutoutPaneHeader {
-    color: #ffbb00;
+#SoftwarePane h2 {
+    text-decoration: underline;
 }
 
-.ProjectsPane, .GamesPane {
-    flex: 1;
-    border: 1px solid var(--topbar-bor-color);
-    box-sizing: border-box;
-    padding: 10px;
-    border-radius: 5px;
-    background: linear-gradient(180deg, white 50%, var(--topbar-top-bot-color) 100%);
-    box-shadow: 0px 4px 5px 0px lightgray;
-    margin: 15px;
-}
 
 .NewsPane {
-    border: 1px solid var(--blue-button-top-mid-color);
-    box-sizing: border-box;
-    padding: 10px;
-    border-radius: 5px;
-    width: 450px;
-    max-width: 450px;
-    background: linear-gradient(180deg, white 50%, var(--topbar-top-bot-color) 100%);
-    box-shadow: 0px 4px 5px 0px lightgray;
-    margin: 50px;
+    height: 100%;
+    width: 400px;
+    background: linear-gradient(240deg, var(--sidebar-color) 10%, var(--sidebar-high-color) 11%, var(--sidebar-color) 20%, var(--sidebar-color) 40%, var(--sidebar-high-color) 41%, var(--sidebar-color) 60%, var(--sidebar-color) 95%, var(--sidebar-high-color) 96%);
+    border-right: 1px solid lightgray;
+    box-shadow: 0px 10px 10px 0px var(--topbar-sha-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.NewsPane h1 {
+    background: linear-gradient(90deg, #000000aa, transparent);
+    padding: 7px;
+}
+
+.NewsPane .NewsPaneDivider {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, lightgray, transparent);
+}
+
+.NewsPane .NewsPointers {
+    padding: 5px;
 }
 
 .NewsPane li {
     margin-left: 15px;
-    padding: 5px 0px 5px 0px;
-    border-bottom: 1px dotted var(--topbar-bor-color);;
+    border-bottom: 1px dotted var(--brand-color);
 }
-
-.PaneHeader {
-    background: linear-gradient(0deg, white 45%, transparent 100%);
-    color: var(--blue-button-top-mid-color);
-    font-weight: normal;
-    position: relative;
-    top: -32px;
-    width: fit-content;
-    padding: 0px 6px 0px 6px;
-    font-size: 32px;
-    margin-bottom: -32px;
-}
-
 
 
 .SoftwareButton {
@@ -301,21 +418,16 @@ button, a {
 
 /* ------------- Software -------------*/
 
-#Projects, #Games {
-    padding-bottom: 10px;
-}
-
 .SoftwareBanner {
     position: relative;
     overflow: hidden;
     display: flex;
-    align-items: center;
+    align-items: end;
     padding: 5px;
-    height: 85px;
-    background: linear-gradient(180deg, var(--blue-button-top-top-color) 0%, var(--blue-button-top-mid-color) 40%, var(--blue-button-bot-mid-color) 40%, var(--blue-button-bot-bot-color) 100%);
+    height: 135px;
+    background: linear-gradient(180deg, var(--blue-button-top-top-color) 0%, var(--blue-button-top-mid-color) 62%, var(--blue-button-bot-mid-color) 62%, var(--blue-button-bot-bot-color) 100%);
     border: 2px solid var(--blue-button-bor-all-color);
     border-bottom: 2px solid var(--blue-button-bor-bot-color);
-    color: white;
     font-size: 35px;
     text-shadow: 0px 0px 10px black;
 }
@@ -327,7 +439,14 @@ button, a {
     position: absolute;
     opacity: 50%;
 }
-    
+
+#DedicatedPageColumns {
+    min-height: calc(100vh - 170px);
+}
+
+#DedicatedPageNews p {
+    padding: 15px;
+}
 
 .SoftwareBannerImg {
     height: 75px;
@@ -347,7 +466,7 @@ button, a {
 #PrioritySoftwarePane {
     padding: 10px;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     column-gap: 10px;
 }
 
@@ -360,83 +479,64 @@ button, a {
 /* ------------- Focused Software -------------*/
 
 
-#SingleSoftwareBanner {
-    justify-content: center;
-    height: 140px;
-    overflow: hidden;
-}
-
-.SoftwareBannerContent {
-    background: transparent;
-}
-
-.SoftwareBannerContent img {
-    height: 100px;
-    background: transparent;
-    position: relative;
-    left: calc(50% - 50px);
-    top: 5px;
-    align-items: center;
-    justify-content: center;
-}
-
-.SoftwareBannerContent p {
-    color: white;
-    position: relative;
-    bottom: 10px;
-    text-shadow: 0px 0px 10px black;
-}
-
-.SoftwareBodyContent {
+#SoftwareDivider {
+    height: 75px;
     display: flex;
-    width: 100%;
+    justify-content: end;
 }
 
-.DownloadPane {
-    display: grid;
-    max-width: 450px;
-    grid-template-columns: auto auto auto;
-    gap: 10px;
-    background: transparent;
-    padding: 5px;
+#DownloadButton {
+    margin: 10px;
+    height: calc(100% - 20px);
+    width: 250px;
+    background: linear-gradient(180deg, var(--download-button-top-top-color) 0%, var(--download-button-top-mid-color) 40%, var(--download-button-bot-mid-color) 40%, var(--download-button-bot-bot-color) 100%);
+    border: 2px solid var(--download-button-bor-all-color);
+    border-top: 2px solid white;
+    border-bottom: 3px solid var(--download-button-bor-bot-color);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px var(--topbar-sha-color);
+    font-weight: bold;
+    font-size: large;
+    transition: all .1s;
 }
 
-.DownloadButton {
-    background: transparent;
-    border: 1px dotted var(--topbar-bor-color);
-    border-radius: 10px;
-    padding: 5px;
-    max-width: 35%;
+#DownloadButton:hover {
+    background: linear-gradient(180deg, lime 0%, var(--download-button-top-mid-color) 40%, var(--download-button-top-mid-color) 40%, lime 100%);
+    border: 2px solid white;
+    border-bottom: 3px solid white;
+    box-shadow: 0px 0px 10px 0px lime;
 }
 
-.DownloadButton img {
-    background: transparent;
+.DownloadInfo {
+    margin: 0px 20px 0px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.DownloadInfo img {
+    height: 40px;
     filter: drop-shadow(0px 0px 2px black);
-    width: 75%;
 }
 
-.DownloadButtonVersion {
+.DownloadInfo .Info {
     display: flex;
+    gap: 10px;
+}
+
+.DownloadInfo .Info .InfoStat {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 100%;
 }
 
-.DownloadButtonVersionNumber {
-    margin-left: 4px;
+#SoftwarePageColumns {
+    min-height: calc(100vh - 375px);
 }
 
-#SoftwareBugsPane {
-    border: 1px solid maroon;
-}
 
-#Critical {
-    color: red;
-}
+/* Redo this later */
 
-.SidebarSpacer {
-    flex: 1;
-}
 
 .InfoPane {
     margin: 50px;
@@ -450,7 +550,6 @@ button, a {
 }
 
 .InfoPane h2 {
-    color: var(--blue-button-top-mid-color);
     padding-bottom: 10px;
 }
 
@@ -462,58 +561,61 @@ button, a {
 .InfoRow img {
     max-width: 50%;
     border-radius: 10px;
-    box-shadow: 0px 4px 15px 0px gray;
+    box-shadow: 0px 4px 15px 0px black;
 }
 
-.LeftPane {
-    width: 100%;
-}
 
-.RightPane {
-    background: linear-gradient(240deg, var(--sidebar-color) 10%, var(--sidebar-high-color) 11%, var(--sidebar-color) 20%, var(--sidebar-color) 40%, var(--sidebar-high-color) 41%, var(--sidebar-color) 60%, var(--sidebar-color) 95%, var(--sidebar-high-color) 96%);
-    min-height: calc(100vh - 154px - var(--topbar-height));
-    display: flex;
-    flex-direction: column;
-}
-
-.Disclaimer {
-    margin: 10px;
-    border-radius: 10px;
-    border: 2px solid red;
-    box-shadow: 0px 4px 5px 0px gray;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    max-width: 530px;
-    background: linear-gradient(240deg, black 10%, #222222 11%, black 20%, black 40%, #222222 41%, black 60%, black 95%, #222222 96%);;
-    height: 100px;
-    width: inherit;
-}
-
-.Disclaimer p, h5 {
-    color: lightgray;
-}
-
-.CopyrightInfo {
-    display: flex;
-    align-items: center;
-}
-
-.CopyrightInfo p {
-    flex: 1;
-}
-
-.CopyrightInfo img {
-    height: 40px;
-}
 
 /* ------------------------------------------------------------------------------ */
 
+.Pane {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    background: linear-gradient(180deg, var(--pane-top-top-color) 0%, var(--pane-top-bot-color) 50%, var(--pane-mid-color) 50%, var(--pane-mid-color) 60%, var(--pane-bot-color) 100%);
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.Subpane {
+    max-width: 500px;
+    min-width: 500px;
+    margin: 4px;
+    border-radius: 3px;
+    border: 1px solid white;
+    background: linear-gradient(90deg, var(--brand-color), #000000);
+    padding: 5px;
+    display: flex;
+}
+
+.ContentScrollX {
+    overflow-y: hidden;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.SiteBodyDivider {
+    background: red;
+    height: 35px;
+    background: linear-gradient(180deg, var(--pane-top-top-color) 0%, var(--pane-top-bot-color) 50%, var(--pane-mid-color) 50%, var(--pane-mid-color) 60%, var(--pane-bot-color) 100%);
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
 .BodyContent {
-    background: linear-gradient(white 50%, #edf1fa 100%);
+    min-height: 100vh;
+    background: radial-gradient(circle at top, var(--brand-color), black);
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+.SiteColumns {
+    width: 100%;
+    display: flex;
+    min-height: calc(100vh - 335px);
 }
 
 .Sidebar {
@@ -523,7 +625,7 @@ button, a {
     box-sizing: border-box;
     width: var(--sidebar-width);
     min-width: var(--sidebar-width);
-    height: calc(100vh - var(--topbar-height) - var(--statusbar-height));
+    height: calc(100vh - var(--topbar-height));
     background: linear-gradient(240deg, var(--sidebar-color) 10%, var(--sidebar-high-color) 11%, var(--sidebar-color) 20%, var(--sidebar-color) 40%, var(--sidebar-high-color) 41%, var(--sidebar-color) 60%, var(--sidebar-color) 95%, var(--sidebar-high-color) 96%);
     border-right: 1px solid var(--topbar-bor-color);
     overflow: hidden;
@@ -547,7 +649,6 @@ button, a {
     border: 2px solid var(--blue-button-bor-all-color);
     border-bottom: 2px solid var(--blue-button-bor-bot-color);
     border-radius: 0px 5px 5px 0px;
-    color: white;
     display: flex;
     align-items: center;
     transition: all .4s;
@@ -606,33 +707,4 @@ button, a {
     background-color: transparent;
     margin-right: 7px;
     height: 20px;
-}
-
-.Statusbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 1px solid var(--topbar-bor-color);
-    height: var(--statusbar-height);
-    box-sizing: border-box;
-    overflow: hidden;
-    padding: 5px;
-    background: linear-gradient(180deg, #bac6d8, var(--statusbar-color) 5%);
-}
-
-.Statusbar img {
-    height: 100%;
-    margin: 0px 15px 0px 15px;
-}
-
-.StatusbarObjectInfo {
-    display: grid;
-    grid-template: auto auto / auto auto;
-    grid-gap: 5px;
-    font-size: 13px;
-    margin-left: 15px;
-}
-
-.StatusbarObjectInfoType, .StatusbarObjectInfoExtra {
-    color: #7f8794;
 }

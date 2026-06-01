@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>
-        KrForge - Contacts
+        KrForge - Contact
     </title>
     <link rel="icon" type="image/x-icon" href="Resources/Profile.png">
     <link rel="stylesheet" href="style.css">
@@ -11,34 +11,37 @@
     <div id="Topbar">
     </div>
     <div class="Content">
-        <div id="Sidebar">
-        </div>
-        <div class="BodyContent" id="Contact">
+        <div class="BodyContent" id="Projects">
             <div class="SoftwareBanner">
+                <div style="display: flex; align-items: center;">
+                    <img src="Resources/HighRes/Contact.png" class="SoftwareBannerImg">
+                    Contact
+                </div>
                 <img src="Resources/Glass.png" class="SoftwareBannerStreaks">
-                <img src="Resources/HighRes/Contact.png" class="SoftwareBannerImg">
-                Contact
             </div>
-            <div class="SoftwarePane" id="PrioritySoftwarePane">
-                <a
-                    class="SoftwareButton" id="PrioritySoftwareButton" href="https://github.com/KrForge" target="_blank"
-                    data-status-img="Resources/Platforms/GitHub.png"
-                    data-status-name="GitHub"
-                    data-status-type="Internet shortcut"
-                >
-                    <img src="Resources/Platforms/GitHub.png">
-                    <div class="SoftwareButtonText">
-                        <p class="SoftwareButtonTitle">
-                            GitHub
-                        </p>
-                        <p class="SidebarButtonDesc">
-                            My GitHub, where I might publish the source code for my software, but I often forget I have the account when I make one
-                        </p>
+            <div class="SiteBodyDivider"></div>
+                <div class="SiteColumns" id="DedicatedPageColumns">
+                    <div class="LeftColumn">
+                        <div class="NewsPane" id="DedicatedPageNews">
+                            <p>Need to report an issue with any software I write, or just want to talk? This is where you can find places to contact me.</p>
+                        </div>
                     </div>
-                </a>
+                    <div class="RightColumn">
+                        <div class="SoftwarePane", id="PrioritySoftwarePane">
+                            <a href="projects.rebriefcase.html">
+                                <div class="Subpane" id="SoftwarePane">                                       
+                                    <img src="Resources/Platforms/GitHub.png" style="filter: drop-shadow(0px 0px 5px white);">
+                                    <div class="ShoutoutPaneBoxText">
+                                        <h2>GitHub</h2>
+                                        <p>My GitHub is the easiest way you can report issues, as I publish all my software there. I even upload the code if you want to take a look yourself.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="Statusbar">
+        </div>
     </div>
 </body>

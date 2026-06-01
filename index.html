@@ -10,9 +10,7 @@
     <div id="Topbar">
     </div>
     <div class="Content">
-        <div id="Sidebar">
-        </div>
-        <div class="BodyContent" id="Home">
+        <div class="BodyContent">
             <div class="HomeBanner">
                 <img src="Resources/BannerBG.jpg">
                 <div class="HomeBannerAnimation">
@@ -37,133 +35,77 @@
                     This effect will look better when there are more things to put here I swear
                 </h6>
             </div>
-            <div class="SiteBody">
-                <div class="LeftColumn">
-                    <div class="ShoutoutPane">
-                        <h1 class="PaneHeader" id="ShoutoutPaneHeader">
-                            Cool people
-                        </h1>
-                        <a
-                            class="SoftwareButton" href="https://teknixstuff.com/" target="_blank"
-                            data-status-img="Resources/Shoutouts/teknixstuff.ico"
-                            data-status-name="Tech Stuff"
-                            data-status-type="Internet shortcut"
-                        >
-                            <img src="Resources/Shoutouts/teknixstuff.ico">
-                            <div class="SoftwareButtonText">
-                                <p class="SoftwareButtonTitle">
-                                    Tech Stuff
-                                </p>
-                                <p class="SidebarButtonDesc">
-                                    He's the guy behind popular tools such as Revert8Plus. He is having money issues at the moment. He would greatly appreciate if you could donate to him.
-                                </p>
+            <div class="SiteBody" id="Home">
+                <div class="SiteBodyDivider"></div>
+                <div class="SiteColumns">
+                    <div class="LeftColumn">
+                        <div class="NewsPane">
+                            <h1>Updates</h1>
+                            <div class="NewsPaneDivider"></div>
+                            <div class="NewsPointers">
+                                <li>Released ReBriefcase</li>
+                                <li>Added scrolling icons to the home banner</li>
+                                <li>Rebranded to avoid potential copyright issues</li>
+                                <li>Added glass streaks to the home banner to match the software banners</li>
+                                <li>Completely overhauled the site design</li>
                             </div>
-                        </a>
-                        <a
-                            class="SoftwareButton" href="https://godotengine.org/" target="_blank"
-                            data-status-img="Resources/Shoutouts/Godot.png"
-                            data-status-name="Godot Team"
-                            data-status-type="Internet shortcut"
-                        >
-                            <img src="Resources/Shoutouts/Godot.png">
-                            <div class="SoftwareButtonText">
-                                <p class="SoftwareButtonTitle">
-                                    Godot Team
-                                </p>
-                                <p class="SidebarButtonDesc">
-                                    They're the people behind the Godot Game Engine. It's free, easy to use, and it's what I have been using personally since 2022
-                                </p>
+                        </div>
+                    </div>
+                    <div class="RightColumn">
+                        <div style="height: 200px; margin: 15px;">
+                            <div class="Pane">
+                                <h2>Cool People</h2>
+                                <div class="ContentScrollX" id="ShoutoutPane">
+                                    <a href="https://teknixstuff.com/" style="height: 100%;" target="_blank">
+                                        <div class="Subpane" id="SoftwarePane">
+                                            <img src="Resources/Shoutouts/teknixstuff.ico">
+                                            <div class="ShoutoutPaneBoxText">
+                                                <h2>Tech Stuff</h2>
+                                                <p>He's the guy behind popular tools such as Revert8Plus. He is currently having issues with money, and he would greatly appreciate it if you could donate to him.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="https://godotengine.org/" style="height: 100%;" target="_blank">
+                                        <div class="Subpane" id="SoftwarePane">
+                                            <img src="Resources/Shoutouts/Godot.png">
+                                            <div class="ShoutoutPaneBoxText">
+                                                <h2>Godot Team</h2>
+                                                <p>They're the people behind the Godot Game Engine. A very easy to use and free game engine, which I have been personally using since 2022.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="NewsPane">
-                        <h1 class="PaneHeader">
-                            Updates
-                        </h1>
-                        <li>
-                            Released ReBriefcase
-                        </li>
-                        <li>
-                            Added scrolling icons to the home banner
-                        </li>
-                        <li>
-                            Rebranded to avoid potential copyright issues
-                        </li>
-                        <li>
-                            Changed the name of this panel from "News" to "Updates"
-                        </li>
-                        <li>
-                            Fixed the broken "Active sidebar button" logic
-                            <h6>(Sidebar buttons get highlighted when their page is loaded now)</h6>
-                        </li>
-                        <li>
-                            Added a pattern to the sidebar
-                        </li>
-                        <li>
-                            Added glass streaks to the home banner to match the software banners
-                        </li>
-                        <li>
-                            Made the "Cool people" pane stand out more
-                        </li>
-                        <li>
-                            Added a working status bar
-                        </li>
-                        <li>
-                            Added a donation page
-                        </li>
-                    </div>
-                </div>
-                <div class="RightColumn">
-                    <div class="TopicPane">
-                        <h1 class="PaneHeader">
-                            Who I am
-                        </h1>
-                        <p>
-                            Hello! I'm KrForge, your friendly internet stranger that is also annoyed in where the internet is heading, with all the surveillance. So, I have set out to write software the way it should be; Local, private and convenient. I also sometimes make games, but my finished : scrapped ratio is rather embarrassing
-                        </p>
-                    </div>
-                    <div class="ProjectsPane" id="SoftwarePane">
-                        <h1 class="PaneHeader">
-                            Projects
-                        </h1>
-                        <a 
-                            class="SoftwareButton" href="projects.rebriefcase.html"
-                            data-status-img="Resources/HighRes/Software/Briefcase.png"
-                            data-status-name="ReBriefcase"
-                            data-status-type="Project"
-                        >
-                            <img src="Resources/HighRes/Software/Briefcase.png">
-                            <div class="SoftwareButtonText">
-                                <p class="SoftwareButtonTitle">
-                                    ReBriefcase
-                                </p>
-                                <p class="SidebarButtonDesc">
-                                    Aims to recreate the briefcases found in Windows 7, with better conflict detections and a cleaner UI. Not compatable with native briefcases.
-                                </p>
+                        </div>
+                        <div style="display: flex;">
+                            <div class="HomeRightColumnLeft">
+                                <div style="height: 200px;">
+                                    <div class="Pane">
+                                        <h2>Recent Projects</h2>
+                                        <a href="projects.rebriefcase.html">
+                                            <div class="Subpane" id="SoftwarePane">                                       
+                                                <img src="Resources/HighRes/Software/Briefcase.png">
+                                                <div class="ShoutoutPaneBoxText">
+                                                    <h2>ReBriefcase</h2>
+                                                    <p>A simple program made to recreate the functionality of Windows briefcases that can be found in Windows 7.</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="GamesPane" id="SoftwarePane">
-                        <h1 class="PaneHeader">
-                            Games
-                        </h1>
-                        <a class="SoftwareButton">
-                            <img src="Resources/HighRes/No.png">
-                            <div class="SoftwareButtonText">
-                                <p class="SoftwareButtonTitle">
-                                    Nothing here yet
-                                </p>
-                                <p class="SidebarButtonDesc">
-                                    I either havn't made a game high-quality enough to put here, or I was too lazy to update this panel
-                                </p>
+                            <div class="HomeRightColumnRight">
+                                <div style="height: 200px;">
+                                    <div class="Pane">
+                                        <h2>Recent Games</h2>
+                                    </div>
+                                </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="Statusbar">
     </div>
 
     <script src="script.js"></script>
