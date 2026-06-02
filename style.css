@@ -3,7 +3,7 @@
     src: url(Resources/Win7.ttf);
 }
 
-.example::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
 }
 
@@ -50,8 +50,6 @@
     --pane-mid-color: #231f2eaa;
     --pane-bot-color: #34265aaa;
 
-    -ms-overflow-style: none;
-    scrollbar-width: none;  /* Firefox */
 }
 
 * {
@@ -62,10 +60,15 @@
     font-family: Win7;
     text-decoration: none;
     box-sizing: border-box;
-
+    
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    scroll-behavior: smooth;
 }
 
 a, p, li {
@@ -129,6 +132,23 @@ button, a {
     filter: drop-shadow(0px 0px 5px black);
 }
 
+.HomeReminder {
+    width: 300px;
+    background: linear-gradient(180deg, var(--pane-top-top-color) 0%, var(--pane-top-bot-color) 50%, var(--pane-mid-color) 50%, var(--pane-mid-color) 80%, var(--pane-bot-color) 100%);
+    border: 1px solid white;
+    border-radius: 0px 0px 10px 0px;
+    padding: 5px;
+    position: absolute;
+    top: var(--topbar-height);
+    left: -1200px;
+    transition: all 2s;
+    box-shadow: 0px 0px 10px 0px var(--brand-color);
+}
+
+.TopbarContent:hover .HomeReminder {
+    left: 0px;
+}
+
 .TopbarButtonPanel {
     margin: 5px 5px 0px 5px;
     flex: 1;
@@ -139,10 +159,12 @@ button, a {
 }
 
 #AboutButtonPanel {
+    margin: 5px 0px 0px 0px;
+    padding: 0px 5px 0px 0px;
     display: flex;
     justify-content: right;
     width: 250px;
-    height: 100%;
+    height: calc(100% - 5px);
 }
 
 #TopbarButtonContainer {
@@ -151,28 +173,20 @@ button, a {
 
 .TopbarButton {
     background: transparent;
-    border-radius: 3px;
     height: 100%;
-    border: 1px solid transparent;
+    width: 110px;
+    border-radius: 5px 5px 0px 0px;
+    border: 1px solid var(--topbar-bot-color);
     font-weight: bold;
     padding: 0px 20px 0px 20px;
-    box-sizing: border-box;
+    box-shadow: 0px -1px 1px 1px #00000077;
+    transition: all .1s;
 }
 
 .TopbarButton:hover {
-    background: linear-gradient(180deg, var(--gray-button-top-color) 50%, var(--gray-button-bot-color) 50%);;
-    border: 1px solid var(--gray-button-bor-color);
-}
-
-#TopbarMainButton {
-    width: 100px;
-    border-radius: 5px 5px 0px 0px;
-}
-
-#TopbarMainButton:hover {
     background: linear-gradient(cyan, #1670c4 43%, #043399 43%, var(--blue-button-top-mid-color));
     border: 1px solid white;
-    box-shadow: 0px 0px 3px 1px var(--topbar-sha-color);
+    box-shadow: 0px 0px 5px 1px cyan;
 }
 
 .TopbarButtonDropdown img {
@@ -182,7 +196,7 @@ button, a {
 #TopbarAboutButton {
     border: 0px;
     border-radius: 0px;
-    border: 1px solid transparent;
+    border: 1px solid var(--topbar-bot-color);
 }
 
 #TopbarAboutButton:hover {
@@ -190,6 +204,19 @@ button, a {
     border: 1px solid white;
     box-shadow: 0px 0px 3px 1px var(--topbar-sha-color);
     border-radius: 5px 0px 0px 5px;
+    box-shadow: 0px 0px 5px 1px cyan;
+}
+
+#GamesRecolor {
+    filter: hue-rotate(-90deg);
+}
+
+#MiscRecolor {
+    filter: hue-rotate(-270deg);
+}
+
+#ContactRecolor {
+    filter: hue-rotate(-180deg);
 }
 
 /* ---------------------------- PAGE CSS DIFFERENCES ---------------------------- */
@@ -311,7 +338,7 @@ button, a {
 
 #ShoutoutPane {
     margin-top: 5px;
-    height: calc(100% - 37px);
+    height: calc(100% - 33px);
     gap: 10px;
 }
 
@@ -375,7 +402,7 @@ button, a {
     padding: 7px;
 }
 
-.NewsPane .NewsPaneDivider {
+.NewsPaneDivider {
     height: 2px;
     width: 100%;
     background: linear-gradient(90deg, lightgray, transparent);
@@ -387,6 +414,7 @@ button, a {
 
 .NewsPane li {
     margin-left: 15px;
+    padding: 5px;
     border-bottom: 1px dotted var(--brand-color);
 }
 
@@ -485,6 +513,39 @@ button, a {
     justify-content: end;
 }
 
+#SoftwareExplinationDictionary {
+    height: 40px;
+    box-shadow: 0px 0px 10px 1px black;
+    padding: 4px;
+    display: flex;
+    gap: 5px;
+}
+
+#SoftwareExplinationDictionary p {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+#SoftwareExplinationDictionary button {
+    height: 100%;
+    width: 100px;
+    background: linear-gradient(180deg, var(--blue-button-top-top-color) 0%, var(--blue-button-top-mid-color) 40%, var(--blue-button-bot-mid-color) 40%, var(--blue-button-bot-bot-color) 100%);
+    border: 2px solid var(--blue-button-bor-all-color);
+    border-top: 2px solid white;
+    border-bottom: 3px solid var(--blue-button-bor-bot-color);
+    border-radius: 5px;
+    transition: all .1s;
+}
+
+#SoftwareExplinationDictionary button:hover {
+    background: linear-gradient(180deg, cyan 0%, var(--blue-button-top-mid-color) 40%, var(--blue-button-top-mid-color) 40%, cyan 100%);
+    border: 2px solid white;
+    border-bottom: 3px solid white;
+    box-shadow: 0px 0px 10px 0px cyan;
+}
+
 #DownloadButton {
     margin: 10px;
     height: calc(100% - 20px);
@@ -535,36 +596,29 @@ button, a {
 }
 
 
-/* Redo this later */
-
-
-.InfoPane {
-    margin: 50px;
+.ExplinationHeader {
+    text-indent: 30px;
+    padding: 10px 0px 10px 0px;
+    background: linear-gradient(90deg, var(--brand-color), transparent);
 }
 
 .InfoRow {
-    display: flex;
-    align-items: center;
-    padding-bottom: 50px;
-    width: 100%;
-}
-
-.InfoPane h2 {
-    padding-bottom: 10px;
-}
-
-.InfoRow p, li {
-    padding: 15px;
-    flex: 1;
+    padding: 10px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto;
+    max-width: 70%;
+    margin-left: 15%;
 }
 
 .InfoRow img {
-    max-width: 50%;
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px 0px black;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    border-top: 1px solid white;
+    border-bottom: 2px solid gray;
+    box-shadow: 0px 2px 5px 1px #00000077;
 }
-
-
 
 /* ------------------------------------------------------------------------------ */
 
@@ -576,10 +630,10 @@ button, a {
     background: linear-gradient(180deg, var(--pane-top-top-color) 0%, var(--pane-top-bot-color) 50%, var(--pane-mid-color) 50%, var(--pane-mid-color) 60%, var(--pane-bot-color) 100%);
     border: 1px solid lightgray;
     border-radius: 5px;
+    box-shadow: 0px 2px 5px 1px #00000077;
 }
 
 .Subpane {
-    max-width: 500px;
     min-width: 500px;
     margin: 4px;
     border-radius: 3px;
@@ -587,6 +641,7 @@ button, a {
     background: linear-gradient(90deg, var(--brand-color), #000000);
     padding: 5px;
     display: flex;
+    box-shadow: 0px 2px 5px 1px #00000077;
 }
 
 .ContentScrollX {
@@ -606,7 +661,7 @@ button, a {
 
 .BodyContent {
     min-height: 100vh;
-    background: radial-gradient(circle at top, var(--brand-color), black);
+    background: radial-gradient(circle at top, var(--brand-color), #1e162c);
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;

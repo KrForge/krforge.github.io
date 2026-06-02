@@ -13,7 +13,8 @@ const HomeAniIcons = [
     "Resources/HighRes/Software/Briefcase.png",
     "Resources/Win7Flag.png",
     "Resources/HighRes/Games.png",
-    "Resources/Shoutouts/Godot.png"
+    "Resources/Shoutouts/Godot.png",
+    "Resources/HighRes/Store.png"
 ];
 
 const HomeAniRows = document.querySelectorAll(".AnimationRow");
@@ -37,7 +38,7 @@ function calcIconCount() { // gets the best number of icons for the width of the
         count += 1
     }
     
-    return count - 1; // subtract one to make icons less tightly packed
+    return count - 2; // subtract two to make icons less tightly packed
 }
 
 function calcSpacing() { // Calculates the best spacing between icons
@@ -64,7 +65,7 @@ function spawnIcon(row, direction, startX, index, arrayPos) {
     const iconImg = document.createElement("img");
     iconDiv.classList.add("AnimationBoxIcon");
 
-    let imageIndex = Math.floor(Math.random() * HomeAniIcons.length);
+    let imageIndex = getAcceptableImageIndex(getPrevIconInRow(ActiveHomeIcons[index]));
 
     iconImg.src = HomeAniIcons[imageIndex];
     iconDiv.id = imageIndex;
@@ -79,10 +80,27 @@ function spawnIcon(row, direction, startX, index, arrayPos) {
     ActiveHomeIcons.push({
         el: iconDiv,
         row: row,
+        slot: arrayPos,
         dir: direction,
         x: x,
         speedMul: index * 0.3
     })
+}
+
+function getAcceptableImageIndex(prevIndex) {
+    if (HomeAniIcons.length <= 1) return 0;
+    
+    let imageIndex = Math.floor(Math.random() * HomeAniIcons.length);
+    
+    if (ActiveHomeIcons.length === IconsPerRow * HomeAniRows.length) {
+        let prevEl = Number(ActiveHomeIcons[prevIndex].el.id);
+        
+        while (imageIndex === prevEl) { // Should prevent this icon from picking the same icon as the last one
+            imageIndex = Math.floor(Math.random() * HomeAniIcons.length);
+        }
+    }
+
+    return imageIndex;
 }
 
 const HomeAniSpeed = 1.0;
@@ -98,14 +116,16 @@ function animateHomeIcons() {
 
         const totalWidth = IconsPerRow * (HomeIconWidth + IconSpacing);
 
+        let index = ActiveHomeIcons.indexOf(icon);
+
         if (icon.dir === "left" && icon.x < -HomeIconWidth) {
             icon.x += totalWidth;
-            updateIconImg(icon.el);
+            updateIconImg(icon.el, index);
         }
 
         if (icon.dir === "right" && icon.x > HomeRowWidth) {
             icon.x -= totalWidth;
-            updateIconImg(icon.el);
+            updateIconImg(icon.el, index);
         }
 
         icon.el.style.transform = `translateX(${icon.x}px)`;
@@ -114,13 +134,40 @@ function animateHomeIcons() {
     requestAnimationFrame(animateHomeIcons);
 }
 
-function updateIconImg(el) {
+function getPrevIconInRow(icon) {
+    if (ActiveHomeIcons.length <= 0) return 0;
+
+    const targetSlot = (icon.slot - 1 + IconsPerRow) % IconsPerRow;
+
+    for (let i = 0; i < ActiveHomeIcons.length; i++) {
+        const other = ActiveHomeIcons[i];
+
+        if (other === icon) {
+            continue;
+        };
+
+        if (other.row !== icon.row) {
+            continue;
+        };
+
+        if (other.slot === targetSlot) {
+            return other;
+            break
+        }
+    }
+
+    return 0;
+}
+
+function updateIconImg(el, index) {
+
+    let prevIndex = getPrevIconInRow(ActiveHomeIcons[index]).slot;
 
     let curImage = Number(el.id);
-    let newImage = Math.floor(Math.random() * HomeAniIcons.length);
+    let newImage = getAcceptableImageIndex(prevIndex);
 
     while (newImage === curImage) { // Don't allow the same image to be chosen
-        newImage = Math.floor(Math.random() * HomeAniIcons.length);
+        newImage = getAcceptableImageIndex(prevIndex);
     }
 
     el.querySelector("img").src = HomeAniIcons[newImage];
