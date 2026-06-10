@@ -10,10 +10,10 @@
 :root {
     --brand-color: #542ebb;
 
-    --topbar-top-top-color: #66666688;
-    --topbar-top-bot-color: #3d3d4288;
-    --topbar-mid-color: #2b2c3088;
-    --topbar-bot-color: #6d728088;
+    --topbar-top-top-color: #64606869;
+    --topbar-top-bot-color: #40354469;
+    --topbar-mid-color: #30293569;
+    --topbar-bot-color: #75587c69;
     --topbar-bor-color: #b6bccc;
     --topbar-sha-color: #0f0f0f;
 
@@ -105,7 +105,7 @@ button, a {
 .TopbarBlurGradient {
     width: 100%;
     height: 100%;
-    background: linear-gradient(black 30%, transparent 100%);
+    background: linear-gradient(#15111a 30%, transparent 100%);
     position: absolute;
 }
 
@@ -121,9 +121,14 @@ button, a {
     display: flex;
     align-items: center;
     padding: 2px;
-    width: 250px;
+    padding-left: 4px;
+    width: 150px;
     height: 100%;
-    background: linear-gradient(90deg, var(--brand-color) 0%, #00000000 100%);
+    border-radius: 0px 12px 12px 0px;
+    border: 1px solid gray;
+    background: linear-gradient(white, var(--brand-color) 50%, #000 50%, var(--brand-color));
+    box-shadow: 0px 0px 2px 1px #00000077;
+    transition: all .1s;
 }
 
 .TopbarBranding img {
@@ -132,21 +137,13 @@ button, a {
     filter: drop-shadow(0px 0px 5px black);
 }
 
-.HomeReminder {
-    width: 300px;
-    background: linear-gradient(180deg, var(--pane-top-top-color) 0%, var(--pane-top-bot-color) 50%, var(--pane-mid-color) 50%, var(--pane-mid-color) 80%, var(--pane-bot-color) 100%);
-    border: 1px solid white;
-    border-radius: 0px 0px 10px 0px;
-    padding: 5px;
-    position: absolute;
-    top: var(--topbar-height);
-    left: -1200px;
-    transition: all 2s;
-    box-shadow: 0px 0px 10px 0px var(--brand-color);
+.TopbarBranding h3 {
+    text-shadow: 0px 0px 5px black;
 }
 
-.TopbarContent:hover .HomeReminder {
-    left: 0px;
+.TopbarBranding:hover {
+    background: linear-gradient(white, #7358bd 50%, var(--brand-color) 50%, white);
+    box-shadow: 0px 0px 5px 2px var(--brand-color);
 }
 
 .TopbarButtonPanel {
@@ -163,7 +160,7 @@ button, a {
     padding: 0px 5px 0px 0px;
     display: flex;
     justify-content: right;
-    width: 250px;
+    width: 150px;
     height: calc(100% - 5px);
 }
 
@@ -177,9 +174,9 @@ button, a {
     width: 110px;
     border-radius: 5px 5px 0px 0px;
     border: 1px solid var(--topbar-bot-color);
+    box-shadow: 0px -1px 1px 1px #00000077;
     font-weight: bold;
     padding: 0px 20px 0px 20px;
-    box-shadow: 0px -1px 1px 1px #00000077;
     transition: all .1s;
 }
 
@@ -267,7 +264,6 @@ button, a {
     aspect-ratio: 1 / 1;
     background: #00007730;
     backdrop-filter: blur(3px);
-    box-sizing: border-box;
     border: 1px solid var(--topbar-bor-color);
     border-radius: 15px;
 }
@@ -289,7 +285,7 @@ button, a {
     position: absolute;
     width: 100%;
     height: inherit;
-    mask: radial-gradient(circle, black 15%, #00000011 50%, #00000077 100%);
+    mask: radial-gradient(circle, black 20%, #00000011 50%, #00000077 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -495,8 +491,45 @@ button, a {
     padding: 10px;
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 10px;
+    gap: 10px;
 }
+
+#PSoftwarePane .Image {
+    height: 140px;
+    padding: 10px;
+    filter: drop-shadow(0px 0px 5px black);
+    border-right: 1px dotted white;
+    margin-right: 10px;
+}
+
+#PSoftwarePane h2 {
+    text-decoration: underline;
+}
+
+#PSoftwarePane .ShoutoutPaneBoxText {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.SoftwareInfo {
+    width: 60%;
+    height: 45px;
+    display: flex;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#SoftwareInfo {
+    width: 50%;
+}
+
+#SoftwareInfo img {
+    height: 70%;
+    filter: drop-shadow(0px 0px 5px black);
+}
+
 
 /* ------------- Contact -------------*/
 
@@ -568,6 +601,22 @@ button, a {
     box-shadow: 0px 0px 10px 0px lime;
 }
 
+.StatusInfo {
+    width: 250px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#Inactive {
+    background: linear-gradient(90deg, maroon, transparent);
+}
+
+#Active {
+    background: linear-gradient(90deg, green, transparent);
+}
+
 .DownloadInfo {
     margin: 0px 20px 0px 20px;
     display: flex;
@@ -575,17 +624,18 @@ button, a {
     gap: 20px;
 }
 
-.DownloadInfo img {
+.DownloadInfo img, .StatusInfo img {
     height: 40px;
     filter: drop-shadow(0px 0px 2px black);
 }
 
-.DownloadInfo .Info {
+.Info {
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
-.DownloadInfo .Info .InfoStat {
+.Info .InfoStat {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -618,6 +668,15 @@ button, a {
     border-top: 1px solid white;
     border-bottom: 2px solid gray;
     box-shadow: 0px 2px 5px 1px #00000077;
+}
+
+/* ------------- About -------------*/
+
+.AboutTop {
+    width: 75%;
+    margin: 15px calc(25% / 2.0);
+    display: flex;
+    gap: 15px;
 }
 
 /* ------------------------------------------------------------------------------ */
