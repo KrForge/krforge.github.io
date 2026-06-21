@@ -4,19 +4,23 @@
         KrForge - ReBriefcase
     </title>
     <link rel="icon" type="image/x-icon" href="Resources/Profile.png">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="CSS/globals.css">
+    <link rel="stylesheet" href="CSS/variables.css">
+    <link rel="stylesheet" href="CSS/topbar.css">
+    <link rel="stylesheet" href="CSS/banner.css">
+    <link rel="stylesheet" href="CSS/software.css">
+    <script src="JS/page_init.js"></script>
 </head>
 <body>
     <div id="Topbar"></div>
     <div class="Content">
         <div class="BodyContent" id="Projects">
-            <div class="HomeBanner">
+            <div class="Banner">
                 <img src="Resources/Banners/ReBriefcaseBanner.png">
 
-                <img src="Resources/Glass.png" class="HomeBannerGlass">
-                <div class="HomeBannerContent">
-                    <div class="HomeBannerNamePlate">
+                <img src="Resources/Glass.png" class="BannerGlass">
+                <div class="BannerContent">
+                    <div class="BannerNamePlate">
                         <img src="Resources/HighRes/Software/Briefcase.png">
                         <p class="NamePlateName">
                             ReBriefcase
@@ -56,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="https://github.com/KrForge/ReBriefcase/releases/latest/download/ReBriefcaseInstaller.exe", target="_blank">
+                <a href="https://github.com/KrForge/ReBriefcase/releases/latest/download/ReBriefcaseInstaller.exe", target="_blank", id="info_request", data-request-type="download">
                     <button id="DownloadButton" data-repo="ReBriefcase">
                         Download Latest
                     </button>
