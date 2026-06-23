@@ -48,11 +48,9 @@ button, a {
 
 .Subpane {
     min-width: 500px;
-    margin: 4px;
     border-radius: 3px;
     border: 1px solid white;
     background: linear-gradient(90deg, var(--brand-color), #000000);
-    padding: 5px;
     display: flex;
     box-shadow: 0px 2px 5px 1px #00000077;
 }
@@ -124,14 +122,38 @@ button, a {
 
 
 #SoftwarePane {
-    height: 140px;
+    height: 200px;
+    width: 500px;
 }
 
-#SoftwarePane img {
-    height: 100%;
-    padding: 10px;
+#SoftwarePane .SoftwarePaneContent {
+    position: absolute;
+    height: 198px;
+    width: 498px;
+    display: flex;
+    align-items: end;
+    background: linear-gradient(transparent, #3d18a3ee 50%);
+}
+
+#SoftwarePane .SoftwareBanner, #SoftwarePane .PSoftwareBanner {
+    width: 500px;
+}
+
+.SoftwarePaneBoxText {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding-bottom: 20px;
+}
+
+.SoftwarePaneBoxText p, .SoftwarePaneBoxText h2{
+    text-shadow: 0px 3px 5px black;
+}
+
+#SoftwarePane .SoftwareIcon {
+    height: 75%;
+    padding: 5px;
     filter: drop-shadow(0px 0px 5px black);
-    border-right: 1px dotted white;
     margin-right: 10px;
 }
 

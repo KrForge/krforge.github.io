@@ -48,8 +48,8 @@
 #PrioritySoftwarePane {
     padding: 10px;
     display: grid;
-    grid-template-columns: auto auto;
-    gap: 10px;
+    grid-template-columns: auto auto auto;
+    gap: 3px;
 }
 
 #PSoftwarePane .Image {

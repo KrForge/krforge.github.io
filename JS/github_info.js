@@ -7,7 +7,7 @@ async function loadRepoInfo(repo) {
     const response = await fetch(
         targetRepo
     );
-
+    console.log(targetRepo);
     const release = await response.json();
 
     const version = release.name;
@@ -53,7 +53,6 @@ function getIsDataRequested() {
     if (requester !== null) {
         switch (type) {
             case "download":
-                console.log("test");
                 let downloadButton = requester.children[0];
                 let repo = downloadButton.getAttribute("data-repo");
                 loadRepoInfo(repo);
