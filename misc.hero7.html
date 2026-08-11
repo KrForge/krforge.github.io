@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        KrForge - Hero7
+    </title>
+    <link rel="icon" type="image/x-icon" href="Resources/Profile.png">
+    <link rel="stylesheet" href="CSS/globals.css">
+    <link rel="stylesheet" href="CSS/variables.css">
+    <link rel="stylesheet" href="CSS/topbar.css">
+    <link rel="stylesheet" href="CSS/banner.css">
+    <link rel="stylesheet" href="CSS/software.css">
+    <script src="JS/page_init.js"></script>
+    <script src="JS/github_filedownload.js"></script>
+</head>
+<body>
+    <div id="Topbar"></div>
+    <div class="Content">
+        <div class="BodyContent" id="Projects">
+            <div class="Banner">
+                <img src="Resources/Screenshots/misc/Hero7/Hero7.png" style="filter: blur(5px);">
+
+                <img src="Resources/Glass.png" class="BannerGlass">
+                <div class="BannerContent">
+                    <div class="BannerNamePlate">
+                        <img src="Resources/Win7Flag.png">
+                        <p class="NamePlateName">
+                            Hero7
+                        </p>
+                        <p class="NamePlateTag">
+                            The Windows Hero Wallpaper, 7ified
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="SiteBodyDivider" id="SoftwareDivider">
+                <a href="https://github.com/KrForge/Pictures/blob/main/Hero7.png?raw=true">
+                    <button id="DownloadButton">
+                        Download
+                    </button>
+                </a>
+            </div>
+            <div class="SiteColumns" id="SoftwarePageColumns">
+                <div class="LeftColumn">
+                    <div class="NewsPane" id="DedicatedPageNews">
+                        <h1>About Hero7</h1>
+                        <div class="NewsPaneDivider"></div>
+                        <p>Hero7 is a version of the Windows 10 "Hero" Wallpaper, modified to use the Windows 7 window shape.</p>
+                    </div>
+                </div>
+                <div class="RightColumn">
+                    <div class="SiteBodyDivider" id="SoftwareExplinationDictionary">
+                        <p>Jump to:</p>
+                        <a href="#why">
+                            <button>
+                                Why
+                            </button>
+                        </a>
+                        <a href="#how">
+                            <button>
+                                How
+                            </button>
+                        </a>
+                    </div>
+
+                    
+                    <div style="height: 50px;" id="why"></div>
+                    <div class="NewsPaneDivider"></div>
+                    <h1 class="ExplinationHeader">Why Hero7 Was Made</h1>
+                    <div class="NewsPaneDivider"></div>
+                    <div style="height: 50px;"></div>
+                    <div class="InfoRow">
+                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
+                            <p>
+                                For a while, I wanted to find a version of the original Hero wallpaper, but using the Windows 7 design, rather than Windows 10.
+                            </p>
+                            <p>
+                                I spent a while searching online, but I couldn't find what I was looking for. I got close, finding a version of the newer Hero wallpaper, but I wanted the older, more "foggy" Hero wallpaper.
+                            </p>
+                        </div>
+                        <img src="Resources/Screenshots/misc/Hero7/Hero7_19h1.jpg">
+                    </div>
+                    <div class="InfoRow">
+                        <img src="Resources/Screenshots/misc/Hero7/Hero7_Example_2.jpg">
+                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
+                            <p>
+                                There were versions that were similar to the original Hero style, but they just simply werent that great (no offense to the original artists).
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
+                            <p>
+                                They were good in their own way, but I wanted something more authentic, something more realistic, like how the real Hero wallpaper was made. And since I couldn't find it online, I figured I'd make it myself
+                            </p>
+                        </div>
+                        <img src="Resources/Screenshots/misc/Hero7/Hero7_Example_1.jpg">
+                    </div>
+                    <div style="height: 50px;" id="how"></div>
+                    <div class="NewsPaneDivider"></div>
+                    <h1 class="ExplinationHeader">How Hero7 Was Made</h1>
+                    <div class="NewsPaneDivider"></div>
+                    <div style="height: 50px;"></div>
+                    <div class="InfoRow">
+                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
+                            <p>
+                                First thing I did was study how Microsoft made the original Wallpaper, and recreate the setup roughly in Blender. This was by far the easiest part.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
+                            <p>
+                                I then did the shape swap from Windows 10 to Windows 7, Using the same warping the Windows 10 shape had
+                            </p>
+                        </div>
+                        <img src="Resources/Screenshots/misc/Hero7/Reference.jpg">
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <img src="Resources/Screenshots/misc/Hero7/Log (1).png">
+                            <img src="Resources/Screenshots/misc/Hero7/Log (2).png">
+                            <img src="Resources/Screenshots/misc/Hero7/Log (3).png">
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
+                            <p>
+                                I knew going into this project that the lighting would be excruciating to get right, because I was attempting to recreate a physical set digitally.
+                            </p>
+                            <p>
+                                I figured the best place to start was fog, and a spotlight behind the window. This got me a lot of the effect pretty easily.
+                            </p>
+                        </div>
+                        <img src="Resources/Screenshots/misc/Hero7/Log (4).png">
+                        <img src="Resources/Screenshots/misc/Hero7/Log (5).png">
+                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
+                           <p>
+                            Next was the lasers coming from behind the window. This was done using area lights, with their spread set to 0.
+                           </p>
+                           <p>
+                            To get the perspective effect, the area lights were placed at the same spot as the spotlight, and angled so it would barely go through the corners of the window panels.
+                           </p>
+                           <p>
+                            The "bloom" effect where the lasers meet the panels are actually just spotlights, which I found most closely represented how they looked in the original.
+                           </p>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
+                           <p>
+                            Now that all the major elements were in place, I spent a lot of time just tweaking the lights until it looked just right. This was by far the most time consuming part of the project.
+                           </p>
+                           <p>
+                            The project in total took roughly 10 hours to complete, and this step alone took around 5 and a half.
+                           </p>
+                           <p>
+                            After all the tweaks were finished, it was render ready, but it wasn't quite good enough yet. An additional Photoshop pass was needed to add in the minor detials that you could easilly miss if you didn't have the original to compare to.
+                           </p>
+                        </div>
+                        <img src="Resources/Screenshots/misc/Hero7/Log (6).png">
+                        
+                        
+                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
+                           <p>
+                            The best part about making this wallpaper in blender, is I have a 3D view of the set, much like Microsoft did when making the original Hero.
+                           </p>
+                        </div>
+                        
+                        
+                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
+                           <p>
+                            Here is the scene from different angles, as well as the finished wallpaper.
+                           </p>
+                           <p>
+                            While I won't stop you from redistributing this wallpaper, I do ask that you credit me.
+                           </p>
+                        </div>
+
+                        <img src="Resources/Screenshots/misc/Hero7/Reference.jpg">
+                        <div style="display: flex; flex-direction: column; gap: 0px;">
+                            <img src="Resources/Screenshots/misc/Hero7/Log (7).png">
+                            <img src="Resources/Screenshots/misc/Hero7/Log (8).png">
+                            <img src="Resources/Screenshots/misc/Hero7/Hero7.png">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
