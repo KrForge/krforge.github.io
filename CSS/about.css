@@ -1,8 +1,0 @@
-/*This file is for only the about page*/
-
-.AboutTop {
-    width: 75%;
-    margin: 15px calc(25% / 2.0);
-    display: flex;
-    gap: 15px;
-}
