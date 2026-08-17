@@ -1,52 +1,53 @@
-<!DOCTYPE html>
 <head>
     <title>
         KrForge - Projects
     </title>
-    <link rel="icon" type="image/x-icon" href="Resources/Profile.png">
-    <link rel="stylesheet" href="CSS/globals.css">
+    <link rel="icon" type="image/x-icon" href="CSS/Resources/Logos/KrForge.png">
+    <link rel="stylesheet" href="CSS/global.css">
     <link rel="stylesheet" href="CSS/variables.css">
-    <link rel="stylesheet" href="CSS/topbar.css">
+    <link rel="stylesheet" href="CSS/banner.css">
+    <link rel="stylesheet" href="CSS/banner_ani.css">
     <link rel="stylesheet" href="CSS/subpage.css">
-    <script src="JS/page_init.js"></script>
 </head>
 <body>
-    <div id="Topbar">
-    </div>
+    <div id="Topbar"></div>
     <div class="Content">
-        <div class="BodyContent" id="Projects">
-            <div class="SoftwareBanner">
-                <div style="display: flex; align-items: center;">
-                    <img src="Resources/HighRes/Projects.png" class="SoftwareBannerImg">
-                    Projects
-                </div>
-                <img src="Resources/Glass.png" class="SoftwareBannerStreaks">
+        <div class="Banner">
+            <div class="BannerAnimation" data-icons="software" style="position: absolute; overflow: hidden;">
+                <div class="AnimationRow"></div>
+                <div class="AnimationRow"></div>
             </div>
-            <div class="SiteBodyDivider"></div>
-                <div class="SiteColumns" id="DedicatedPageColumns">
-                    <div class="LeftColumn">
-                        <div class="NewsPane" id="DedicatedPageNews">
-                            <p>This is where you can find projects I release.</p>
-                        </div>
-                    </div>
-                    <div class="RightColumn">
-                        <div class="SoftwarePane", id="PrioritySoftwarePane">
-                            
-                            <a href="projects.rebriefcase.html">
-                                <div class="Subpane" id="SoftwarePane">
-                                    <div class="SoftwarePaneContent">
-                                        <img src="Resources/HighRes/Software/Briefcase.png" class="SoftwareIcon">
-                                        <div class="SoftwarePaneBoxText">
-                                            <h2>ReBriefcase</h2>
-                                            <p>A simple program made to recreate the functionality of Windows briefcases that can be found in Windows 7.</p>
-                                        </div>
-                                    </div>                           
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+            <div class="Branding">
+                <img src="CSS/Resources/Icons/Projects.png">
+                <div class="BrandingText">
+                    <h1>Projects</h1>
+                    <p>Software without the Spyware</p>
                 </div>
             </div>
         </div>
+        <div class="Panel" id="ContentDivider">
+            <img src="CSS/Resources/Aero/CornerGlow.png" class="PanelCornerGlow">
+        </div>
+        <div class="HomeColumns">
+            <div class="LeftColumn">
+                <div class="Panel" id="NewsPane">
+                    <img src="CSS/Resources/Aero/CornerGlow.png" class="PanelCornerGlow" style="opacity: 15%;">
+                    <img src="CSS/Resources/Aero/Glass.png" class="PanelCornerGlow" style="opacity: 10%;">
+                    <div class="NewsContent">
+                        <h1 class="PanelHeader">
+                            Updates
+                        </h1>
+                        <li>Released ReBriefcase</li>
+                        <li>ReBriefcase stopped being maintained</li>
+                    </div>
+                </div>
+            </div>
+            <div class="RightColumn" id="CardContainer" data-card-type="software">
+            </div>
+        </div>
     </div>
+
+    <script src="JS/page_init.js"></script>
+    <script src="JS/banner_ani.js"></script>
+    <script src="JS/load_cards.js"></script>
 </body>

@@ -1,123 +1,68 @@
-<!DOCTYPE html>
 <head>
     <title>
-        KrForge - Home
+        KrForge
     </title>
-    <link rel="icon" type="image/x-icon" href="Resources/Profile.png">
+    <link rel="icon" type="image/x-icon" href="CSS/Resources/Logos/KrForge.png">
+    <link rel="stylesheet" href="CSS/global.css">
     <link rel="stylesheet" href="CSS/variables.css">
-    <link rel="stylesheet" href="CSS/globals.css">
-    <link rel="stylesheet" href="CSS/topbar.css">
-    <link rel="stylesheet" href="CSS/home.css">
     <link rel="stylesheet" href="CSS/banner.css">
     <link rel="stylesheet" href="CSS/banner_ani.css">
+    <link rel="stylesheet" href="CSS/home.css">
 </head>
 <body>
-    <div id="Topbar">
-    </div>
+    <div id="Topbar"></div>
     <div class="Content">
-        <div class="BodyContent">
-            <div class="Banner">
-                <img src="Resources/BannerBG.jpg">
-                <div class="BannerAnimation">
-                    <div class="AnimationRow"></div>
-                    <div class="AnimationRow"></div>
-                    <div class="AnimationRow"></div>
+        <div class="Banner">
+            <div class="BannerAnimation" data-icons="home" style="position: absolute; overflow: hidden;">
+                <div class="AnimationRow"></div>
+                <div class="AnimationRow"></div>
+            </div>
+            <div class="Branding">
+                <img src="CSS/Resources/Logos/KrForge.png">
+                <div class="BrandingText">
+                    <h1>KrForge</h1>
+                    <p>Convenience without Surveillance</p>
                 </div>
-
-                <img src="Resources/Glass.png" class="BannerGlass">
-                <div class="BannerContent">
-                    <div class="BannerNamePlate">
-                        <img src="Resources/Profile.png">
-                        <p class="NamePlateName">
-                            KrForge
-                        </p>
-                        <p class="NamePlateTag">
-                            Convenience without Surveillance
-                        </p>
+            </div>
+        </div>
+        <div class="Panel" id="ContentDivider">
+            <img src="CSS/Resources/Aero/CornerGlow.png" class="PanelCornerGlow">
+        </div>
+        <div class="HomeColumns">
+            <div class="LeftColumn">
+                <div class="Panel" id="NewsPane">
+                    <img src="CSS/Resources/Aero/CornerGlow.png" class="PanelCornerGlow" style="opacity: 15%;">
+                    <img src="CSS/Resources/Aero/Glass.png" class="PanelCornerGlow" style="opacity: 10%;">
+                    <div class="NewsContent">
+                        <h1 class="PanelHeader">
+                            Updates
+                        </h1>
+                        <li>Released ReBriefcase</li>
+                        <li>Added scrolling icons to the home banner</li>
+                        <li>Rebreanded to avoid potential copyright issues</li>
+                        <li>Completely overhauled the site design</li>
+                        <li>Finished redesigning the software page, made the about button work correctly, added a Misc. section, and color coded the topbar buttons</li>
+                        <li>Added status to software pages</li>
+                        <li>Released Hero7</li>
+                        <li>Completely rewrote + redesigned the site (again)</li>
                     </div>
                 </div>
             </div>
-            <div class="SiteBodyDivider"></div>
-            <div class="SiteColumns">
-                <div class="LeftColumn">
-                    <div class="NewsPane">
-                        <h1>Updates</h1>
-                        <div class="NewsPaneDivider"></div>
-                        <div class="NewsPointers">
-                            <li>Released ReBriefcase</li>
-                            <li>Added scrolling icons to the home banner</li>
-                            <li>Rebranded to avoid potential copyright issues</li>
-                            <li>Added glass streaks to the home banner to match the software banners</li>
-                            <li>Completely overhauled the site design</li>
-                            <li>Finished redesigning the software page, made the about button work properly, added a little hint to the topbar (hover your mouse over it for a second), added a Misc. page to the topbar, and color-coded the 4 pages in the topbar</li>
-                            <li>Added status to software pages, and made the "home" button on the topbar more button-like</li>
-                            <li>Released Hero7</li>
-                        </div>
+            <div class="RightColumn">
+                <div class="Panel" id="ShoutoutPanel">
+                    <img src="CSS/Resources/Aero/CornerGlow.png" class="PanelCornerGlow" style="opacity: 15%;">
+                    <h1 class="PanelHeader">
+                        Awesome People
+                    </h1>
+                    <div style="display: flex; overflow-x: scroll;" id="CardContainer" data-card-type="shoutout">
                     </div>
                 </div>
-                <div class="RightColumn">
-                    <div style="height: 280px; margin: 15px;">
-                        <div class="Pane" >
-                            <h2>Cool People</h2>
-                            <div class="ContentScrollX" id="ShoutoutPane">
-
-                                    <a href="https://teknixstuff.com/" target="_blank" style="margin: 4px;">
-                                        <div class="Subpane" id="SoftwarePane">
-                                            <div class="SoftwarePaneContent">
-                                                <img src="Resources/Shoutouts/teknixstuff.ico" class="SoftwareIcon">
-                                                <div class="SoftwarePaneBoxText">
-                                                    <h2>Tech Stuff</h2>
-                                                    <p>He's the guy behind popular tools such as Revert8Plus. He is currently having issues with money, and he would greatly appreciate it if you could donate to him.</p>
-                                                </div>
-                                            </div>                           
-                                        </div>
-                                    </a>
-
-                                    <a href="https://godotengine.org/" target="_blank" style="margin: 4px;">
-                                        <div class="Subpane" id="SoftwarePane">
-                                            <div class="SoftwarePaneContent">
-                                                <img src="Resources/Shoutouts/Godot.png" class="SoftwareIcon">
-                                                <div class="SoftwarePaneBoxText">
-                                                    <h2>Godot Team</h2>
-                                                    <p>They're the people behind the Godot Game Engine. A very easy to use and free game engine, which I have been personally using since 2022.</p>
-                                                </div>
-                                            </div>                           
-                                        </div>
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="height: 280px; margin: 15px;">
-                        <div class="Pane" >
-                            <h2>Recent Projects</h2>
-                            <div class="ContentScrollX" id="ShoutoutPane">
-
-                                <a href="misc.hero7.html" style="margin: 4px;">
-                                    <div class="Subpane" id="SoftwarePane">
-                                        <div class="SoftwarePaneContent">
-                                            <img src="Resources/Win7Flag.png" class="SoftwareIcon">
-                                            <div class="SoftwarePaneBoxText">
-                                                <h2>Hero7</h2>
-                                                <p>The Windows 10 "Hero" Wallpaper with the Windows shape being replaced with the Windows 7 shape</p>
-                                            </div>
-                                        </div>                           
-                                    </div>
-                                </a>
-
-                                <a href="projects.rebriefcase.html" style="margin: 4px;">
-                                    <div class="Subpane" id="SoftwarePane">
-                                        <div class="SoftwarePaneContent">
-                                            <img src="Resources/HighRes/Software/Briefcase.png" class="SoftwareIcon">
-                                            <div class="SoftwarePaneBoxText">
-                                                <h2>ReBriefcase</h2>
-                                                <p>A simple program made to recreate the functionality of Windows briefcases that can be found in Windows 7.</p>
-                                            </div>
-                                        </div>                           
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                <div class="Panel" id="ShoutoutPanel">
+                    <img src="CSS/Resources/Aero/CornerGlow.png" class="PanelCornerGlow" style="opacity: 15%;">
+                    <h1 class="PanelHeader">
+                        My Recent Projects
+                    </h1>
+                    <div style="display: flex; overflow-x: scroll;" id="CardContainer" data-card-type="recent">
                     </div>
                 </div>
             </div>
@@ -126,4 +71,5 @@
 
     <script src="JS/page_init.js"></script>
     <script src="JS/banner_ani.js"></script>
+    <script src="JS/load_cards.js"></script>
 </body>

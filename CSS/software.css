@@ -1,0 +1,124 @@
+.HomeColumns {
+    background: linear-gradient(var(--brand-color), var(--brand-color-dark));
+    width: 100%;
+    display: flex;
+    min-height: calc(100vh - var(--banner-height) - 50px);
+}
+
+#NewsPane {
+    width: 500px; 
+    height: calc(100% - 10px);
+    margin: 10px 10px 10px 0px;
+    border-radius: 0px 15px 0px 0px;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.PanelHeader {
+    background: linear-gradient(90deg, var(--brand-color-dark) 20%, transparent, #ffffff44);
+    padding: 10px;
+    border-bottom: 1px solid #ffffff55;
+    box-shadow: 0px 0px 1px 1px black;
+}
+
+.NewsContent li {
+    margin-left: 10px;
+    padding: 7.5px;
+    border-bottom: 1px dotted var(--brand-color);
+}
+
+.RightColumn {
+    width: 100%;
+    height: calc(100vh - var(--banner-height) - 66px);
+    overflow-x: hidden;
+    margin: 8px 0px 8px 0px;
+    padding: 2px 0px 0px 2px;
+    gap: 10px;
+}
+
+#ShoutoutPanel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 0px 0px 15px;
+    box-shadow: 0px 0px 1px 1px black;
+}
+
+#Shoutout {
+    margin: 15px;
+    min-width: 500px;
+    max-width: 500px;
+    border-radius: 7px;
+    height: 218px;
+}
+
+.ShoutoutContent {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: end;
+    height: 175px;
+    padding: 10px;
+    background: linear-gradient(transparent, var(--brand-color-dark));
+}
+
+.DownloadButton {
+    background: linear-gradient(180deg, #00ff00 0%, #005e00 40%, #003500 42%, #00c700 100%);
+    border: 2px solid lime;
+    margin: 5px;
+    height: calc(100% - 10px);
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 0px black;
+    text-shadow: 0px 0px 5px black;
+    font-size: 18px;
+    transition: all .2s;
+}
+
+.DownloadButton:hover {
+    background: linear-gradient(180deg, #ffffff 0%, #00df00 40%, #008000 42%, #00ff00 100%);
+    border: 2px solid white;
+    box-shadow: 0px 0px 10px 0px lime;
+}
+
+.VersionInfo {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.VersionInfo img {
+    height: 100%;
+    padding: 7px;
+    filter: drop-shadow(0px 0px 2px black);
+}
+
+.Screenshot {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ffffff55;
+    margin: 5px;
+    box-shadow: 0px 0px 1px 1px black;
+}
+
+.Screenshot img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.ScreenshotContext {
+    padding: 60px;
+    position: absolute;
+    bottom: 0px;
+    background: linear-gradient(transparent, #000000aa 50%);
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

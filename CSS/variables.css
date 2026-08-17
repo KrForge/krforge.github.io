@@ -1,0 +1,9 @@
+:root {
+    --brand-color : #531bbb;
+    --brand-color-dark : #150d3f;
+
+    --banner-height : calc(200px + var(--topbar-height));
+
+    --topbar-height: 42px;
+    --topbar-color : linear-gradient(#7a7580aa 0%, #403544aa 50%, #302935aa 50%, #302935aa 70%, #4b4252aa 100%);
+}

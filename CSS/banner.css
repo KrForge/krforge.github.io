@@ -1,0 +1,33 @@
+.Banner {
+    height: var(--banner-height);
+    background: url("Resources/Banners/HomeBanner.jpg");
+    background-size: cover;
+    background-position-y: center;
+    position: relative;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.Branding {
+    padding-top: var(--topbar-height);
+    background: linear-gradient(90deg, var(--brand-color) 10%, transparent);
+    height: 100%;
+    width: 750px;
+    display: flex;
+    align-items: center;
+}
+
+.Branding img {
+    height: 200px;
+    padding: 15px;
+    aspect-ratio: 1/1;
+    filter: drop-shadow(0px 0px 10px black);
+}
+
+.BrandingText {
+    text-shadow: 0px 0px 10px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}

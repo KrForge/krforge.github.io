@@ -1,40 +1,51 @@
-<!DOCTYPE html>
 <head>
     <title>
         KrForge - Games
     </title>
-    <link rel="icon" type="image/x-icon" href="Resources/Profile.png">
-    <link rel="stylesheet" href="CSS/globals.css">
+    <link rel="icon" type="image/x-icon" href="CSS/Resources/Logos/KrForge.png">
+    <link rel="stylesheet" href="CSS/global.css">
     <link rel="stylesheet" href="CSS/variables.css">
-    <link rel="stylesheet" href="CSS/topbar.css">
+    <link rel="stylesheet" href="CSS/banner.css">
+    <link rel="stylesheet" href="CSS/banner_ani.css">
     <link rel="stylesheet" href="CSS/subpage.css">
-    <script src="JS/page_init.js"></script>
 </head>
 <body>
-    <div id="Topbar">
-    </div>
+    <div id="Topbar"></div>
     <div class="Content">
-        <div class="BodyContent" id="Games">
-            <div class="SoftwareBanner" id="GamesRecolor">
-                <div style="display: flex; align-items: center;">
-                    <img src="Resources/HighRes/Games.png" class="SoftwareBannerImg">
-                    Games
-                </div>
-                <img src="Resources/Glass.png" class="SoftwareBannerStreaks">
+        <div class="Banner">
+            <div class="BannerAnimation" data-icons="games" style="position: absolute; overflow: hidden;">
+                <div class="AnimationRow"></div>
+                <div class="AnimationRow"></div>
             </div>
-            <div class="SiteBodyDivider"></div>
-                <div class="SiteColumns" id="DedicatedPageColumns">
-                    <div class="LeftColumn">
-                        <div class="NewsPane" id="DedicatedPageNews">
-                            <p>This is where you can find games I release.</p>
-                            <p>I havn't gotten around to that yet, please come back another time.</p>
-                        </div>
-                    </div>
-                    <div class="RightColumn">
-                    </div>
+            <div class="Branding">
+                <img src="CSS/Resources/Icons/Games.png">
+                <div class="BrandingText">
+                    <h1>Games</h1>
+                    <p>Entertainment without Payment</p> <!-- Think of a tagline for here -->
                 </div>
             </div>
         </div>
+        <div class="Panel" id="ContentDivider">
+            <img src="CSS/Resources/Aero/CornerGlow.png" class="PanelCornerGlow">
+        </div>
+        <div class="HomeColumns">
+            <div class="LeftColumn">
+                <div class="Panel" id="NewsPane">
+                    <img src="CSS/Resources/Aero/CornerGlow.png" class="PanelCornerGlow" style="opacity: 15%;">
+                    <img src="CSS/Resources/Aero/Glass.png" class="PanelCornerGlow" style="opacity: 10%;">
+                    <div class="NewsContent">
+                        <h1 class="PanelHeader">
+                            Updates
+                        </h1>
+                        <li>Nothing here yet. Come back another time!</li>
+                    </div>
+                </div>
+            </div>
+            <div class="RightColumn">
+            </div>
         </div>
     </div>
+
+    <script src="JS/page_init.js"></script>
+    <script src="JS/banner_ani.js"></script>
 </body>

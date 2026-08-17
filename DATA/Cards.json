@@ -1,0 +1,80 @@
+{
+    "shoutout" : {
+        "teknixstuff" : {
+            "link" : "https://teknixstuff.com/",
+            "external" : true,
+            "name" : "Tech Stuff",
+            "banner" : "CSS/Resources/Banners/TechStuff.jpg",
+            "img" : "CSS/Resources/Logos/TechStuff.ico",
+            "desc" : "He's the guy behind popular tools such as Revert8Plus and UpDownTool. He's been having financial issues recently, and would greatly appreciate it if you could donate!"
+        },   
+        "godot" : {
+            "link" : "https://godotengine.org/",
+            "external" : true,
+            "name" : "Godot Team",
+            "banner" : "CSS/Resources/Banners/Godot.webp",
+            "img" : "CSS/Resources/Logos/Godot.png",
+            "desc" : "They're the team behind the Godot Game Engine. A free, easy to learn game engine that I have been personally using since 2022."
+        },   
+        "scratch" : {
+            "link" : "https://scratch.mit.edu/",
+            "external" : true,
+            "name" : "Scratch Team",
+            "banner" : "CSS/Resources/Banners/Scratch.jpg",
+            "img" : "CSS/Resources/Logos/Scratch.png",
+            "desc" : "Scratch was the tool that first got me interested in coding, back in 2016. They are the reason why ended up loving coding today."
+        }
+    },
+
+    "software" : {
+        "rebriefcase" : {
+            "link" : "projects.rebriefcase.html",
+            "external" : false,
+            "name" : "ReBriefcase",
+            "banner" : "CSS/Resources/Banners/ReBriefcase.png",
+            "img" : "CSS/Resources/Icons/Software/ReBriefcase.png",
+            "desc" : "A simple program made to recreate the functionallity of Windows briefcases that can be found in Windows 7."
+        }
+    },
+
+    "misc" : {
+        "hero7" : {
+            "link" : "misc.hero7.html",
+            "external" : false,
+            "name" : "Hero7",
+            "banner" : "CSS/Resources/Banners/Hero7.png",
+            "img" : "CSS/Resources/Icons/Software/Hero7.png",
+            "desc" : "The Windows 10 wallpaper, modified to use the Windows logo shape seen in Windows 7."
+        }
+    },
+
+    "contact" : {
+        "hero7" : {
+            "link" : "https://github.com/KrForge",
+            "external" : true,
+            "name" : "GitHub",
+            "banner" : "",
+            "img" : "CSS/Resources/Logos/GitHub.png",
+            "desc" : "My GitHub is the easiest way you can report issues, as I publish my projects there. All open source, go take a look for yourself!"
+        }
+    },
+
+    "recent" : {
+        "hero7" : {
+            "link" : "misc.hero7.html",
+            "external" : false,
+            "name" : "Hero7",
+            "banner" : "CSS/Resources/Banners/Hero7.png",
+            "img" : "CSS/Resources/Icons/Software/Hero7.png",
+            "desc" : "The Windows 10 wallpaper, modified to use the Windows logo shape seen in Windows 7."
+        },
+        "rebriefcase" : {
+            "link" : "projects.rebriefcase.html",
+            "external" : false,
+            "name" : "ReBriefcase",
+            "banner" : "CSS/Resources/Banners/ReBriefcase.png",
+            "img" : "CSS/Resources/Icons/Software/ReBriefcase.png",
+            "desc" : "A simple program made to recreate the functionallity of Windows briefcases that can be found in Windows 7."
+        }
+    }
+}

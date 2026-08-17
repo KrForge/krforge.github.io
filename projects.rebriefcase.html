@@ -1,261 +1,132 @@
-<!DOCTYPE html>
 <head>
     <title>
         KrForge - ReBriefcase
     </title>
-    <link rel="icon" type="image/x-icon" href="Resources/Profile.png">
-    <link rel="stylesheet" href="CSS/globals.css">
+    <link rel="icon" type="image/x-icon" href="CSS/Resources/Logos/KrForge.png">
+    <link rel="stylesheet" href="CSS/global.css">
     <link rel="stylesheet" href="CSS/variables.css">
-    <link rel="stylesheet" href="CSS/topbar.css">
     <link rel="stylesheet" href="CSS/banner.css">
+    <link rel="stylesheet" href="CSS/banner_ani.css">
     <link rel="stylesheet" href="CSS/software.css">
-    <script src="JS/page_init.js"></script>
 </head>
 <body>
     <div id="Topbar"></div>
     <div class="Content">
-        <div class="BodyContent" id="Projects">
-            <div class="Banner">
-                <img src="Resources/Banners/ReBriefcaseBanner.png">
-
-                <img src="Resources/Glass.png" class="BannerGlass">
-                <div class="BannerContent">
-                    <div class="BannerNamePlate">
-                        <img src="Resources/HighRes/Software/Briefcase.png">
-                        <p class="NamePlateName">
-                            ReBriefcase
+        <div class="Banner">
+            <img src="CSS/Resources/Banners/ReBriefcase.png" style="position: absolute; z-index: -1;">
+            <div class="BannerAnimation" data-icons="software" style="position: absolute; overflow: hidden;">
+                <div class="AnimationRow"></div>
+                <div class="AnimationRow"></div>
+            </div>
+            <div class="Branding">
+                <img src="CSS/Resources/Icons/Software/ReBriefcase.png">
+                <div class="BrandingText">
+                    <h1>ReBriefcase</h1>
+                    <p>Windows Briefcases, Reborn</p>
+                </div>
+            </div>
+        </div>
+        <div class="Panel" id="ContentDivider" style="height: 50px; display: flex;">
+            <img src="CSS/Resources/Aero/CornerGlow.png" class="PanelCornerGlow">
+            <a href="https://github.com/KrForge/ReBriefcase/releases/latest/download/ReBriefcaseInstaller.exe">
+                <button class="DownloadButton">
+                    Download
+                </button>
+            </a>
+            <div class="VersionInfo">
+                <img src="CSS/Resources/Icons/Info/Info.png">
+                <p class="GitHubData" id="GHVersionNumber" data-repo="ReBriefcase">
+                    It is load
+                </p>
+            </div>
+        </div>
+        <div class="HomeColumns">
+            <div class="LeftColumn">
+                <div class="Panel" id="NewsPane">
+                    <img src="CSS/Resources/Aero/CornerGlow.png" class="PanelCornerGlow" style="opacity: 15%;">
+                    <img src="CSS/Resources/Aero/Glass.png" class="PanelCornerGlow" style="opacity: 10%;">
+                    <div class="NewsContent">
+                        <h1 class="PanelHeader">
+                            About ReBriefcase
+                        </h1>
+                        <li>ReBriefcase is a small utility made to replicate the functionallity of the Windows briefcases found in Windows 7</li>
+                        <li>I chose to make ReBriefcase because I did use briefcases from Windows 7, until Microsoft phased them out.</li>
+                        <li>I found other replicas online, but they didn't include a sync engine, and requires replacing system files</li>
+                        <li>ReBriefcase doesn't touch your system, while having a sync engine</li>
+                    </div>
+                    <div style="flex:1;"></div>
+                    <div class="Panel" style="height: 150px; margin: 10px;">
+                        <img src="CSS/Resources/Aero/CornerGlow.png" class="PanelCornerGlow" style="opacity: 15%;">
+                        <h4 class="PanelHeader">
+                            Disclaimer
+                        </h4>
+                        <p style="padding: 5px">
+                            ReBriefcase is still considered "Alpha" software, and can break and/or cause data loss. It is highly reccomended that you keep any valuable data stored in a safe location before using ReBriefcase.
                         </p>
-                        <p class="NamePlateTag">
-                            Windows Briefcases, Reborn
+                        <p style="padding-left: 15px;">
+                            -KrForge
                         </p>
                     </div>
                 </div>
             </div>
-            
-            <div class="SiteBodyDivider" id="SoftwareDivider">
-                <div class="StatusInfo" id="Inactive">
-                    <div class="Info">
-                        <img src="Resources/HighRes/No.png">
-                        <p>Not actively maintained</p>
-                    </div>
-                </div>
-                <div style="flex: 1;"></div>
-                <div class="DownloadInfo">
-                    <div class="Info">
-                        <img src="Resources/HighRes/Info.png">
-                        <div class="InfoStat">
-                            <p>Version</p>
-                            <p id="DownloadVersion">
-                                Loading...
-                            </p>
+            <div class="RightColumn">
+                <div class="Panel" id="ShoutoutPanel">
+                    <img src="CSS/Resources/Aero/CornerGlow.png" class="PanelCornerGlow" style="opacity: 15%;">
+                    <h1 class="PanelHeader">
+                        Screenshots
+                    </h1>
+                    <div style="display: flex; overflow-x: scroll; height: 100%; gap: 10px;">
+                        <div class="Screenshot">
+                            <img src="CSS/Resources//Screenshots/ReBriefcase/1.PNG">
+                            <div class="ScreenshotContext">
+                                <p>
+                                    ReBriefcase lives in the context menu.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="Info">
-                        <img src="Resources/HighRes/Time.png">
-                        <div class="InfoStat">
-                            <p>Last Updated</p>
-                            <p id="ReleaseDate">
-                                Loading...
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <a href="https://github.com/KrForge/ReBriefcase/releases/latest/download/ReBriefcaseInstaller.exe", target="_blank", id="info_request", data-request-type="download">
-                    <button id="DownloadButton" data-repo="ReBriefcase">
-                        Download Latest
-                    </button>
-                </a>
-            </div>
-            <div class="SiteColumns" id="SoftwarePageColumns">
-                <div class="LeftColumn">
-                    <div class="NewsPane" id="DedicatedPageNews">
-                        <h1>About ReBriefcase</h1>
-                        <div class="NewsPaneDivider"></div>
-                        <p>ReBriefcase is a small piece of software made to replicate the functionality of the briefcases seen in Windows 7.</p>
-                        <p>I chose to make ReBriefcase because I used Windows 7 Briefcases, and Microsoft decided to phase it out, and even removing it in later Windows 10 builds.</p>
-                        <p>I have found other replicas online, but they tended to only bring back their look in Explorer, but left out the sync engine, and required messing with system files.</p>
-                        <p>ReBriefcase does not touch system files, and can be installed like a normal program. It also has a sync engine, which is the whole point of briefcases.</p>
                         
-                        <div class="NewsPaneDivider"></div>
-                        <h1 style="color: #bd1049;">Known Bugs</h1>
-                        <div class="NewsPaneDivider"></div>
+                        <div class="Screenshot">
+                            <img src="CSS/Resources//Screenshots/ReBriefcase/2.PNG">
+                            <div class="ScreenshotContext">
+                                <p>
+                                    A briefcase generated by ReBriefcase.
+                                </p>
+                            </div>
+                        </div>
                         
-                        <p>
-                            As far as I know ReBriefcase is bug free.
-                        </p>
-                        <p>
-                            Found a bug? Report it on ReBriefcase's GitHub repo. You can find my GitHub in the contacts page.
-                        </p>
-                        <div style="flex: 1;"></div>
-                        <div class="NewsPaneDivider"></div>
-                        <h3>Disclaimer</h3>
-                        <div class="NewsPaneDivider"></div>
-
-                        <p>
-                            ReBriefcase is still considered "Beta" software. While known bugs have been ironed out, bugs can very well still exist. It is reccomended you keep a backup of your data when using ReBriefcase, and I am not responsible for any data loss you may encounter when using it.
-                        </p>
-                    </div>
-                </div>
-                <div class="RightColumn">
-                    <div class="SiteBodyDivider" id="SoftwareExplinationDictionary">
-                        <p>Jump to:</p>
-                        <a href="#install">
-                            <button>
-                                Installing
-                            </button>
-                        </a>
-                        <a href="#using">
-                            <button>
-                                Using
-                            </button>
-                        </a>
-                        <a href="#syncengine">
-                            <button>
-                                Sync Engine
-                            </button>
-                        </a>
-                        <a href="#conflict">
-                            <button>
-                                Conflicts
-                            </button>
-                        </a>
-                    </div>
-
-                    
-                    <div style="height: 50px;" id="install"></div>
-                    <div class="NewsPaneDivider"></div>
-                    <h1 class="ExplinationHeader">Installing ReBriefcase</h1>
-                    <div class="NewsPaneDivider"></div>
-                    <div style="height: 50px;"></div>
-                    <div class="InfoRow">
-                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
-                            <p>
-                                Installing ReBriefcase is the same as installing any other. All you have to do is click through the installer and ReBriefcase will be installed, no restarting or relogging needed! 
-                            </p>
-                            <p>
-                                After the installation is finished, there will be a new option in your context menu when you click on a folder. This is where you will use ReBriefcase.
-                            </p>
-                            <p>
-                                ReBriefcase is compatible with any version of Windows that supports .NET v10.0, this includes Windows 10 and Windows 11, but ReBriefcase has only been tested on Windows 10.
-                            </p>
+                        <div class="Screenshot">
+                            <img src="CSS/Resources//Screenshots/ReBriefcase/3.PNG">
+                            <div class="ScreenshotContext">
+                                <p>
+                                    The sync will display this message when it does not have a reference file system to go off of during the syncing process. This can lead to data loss, as it prioritizes larger files. It is reccomended to manually sync peers before attempting to sync for the first time.
+                                </p>
+                            </div>
                         </div>
-                        <img src="Resources/Screenshots/projects/ReBriefcase/11.png">
-                    </div>
-                    <div style="height: 50px;" id="using"></div>
-                    <div class="NewsPaneDivider"></div>
-                    <h1 class="ExplinationHeader">Using ReBriefcase</h1>
-                    <div class="NewsPaneDivider"></div>
-                    <div style="height: 50px;"></div>
-                    <div class="InfoRow">
-                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
-                            <p>
-                                To make a briefcase, first make a regular folder, and right click it. You should see a submenu labeld "ReBriefcase" if it installed correctly.
-                            </p>
-                            <p>
-                                Click on the button labeled "Turn into briefcase". This injects the folder with metadata, and adds it to ReBriefcase's database to allow the folder to function like a briefcase.
-                            </p>
-                            <p>
-                                The briefcase is still a folder after it's turned into a briefcase, so you can still use it as one. This is the closest way I could replicate the functionality with minimal extra steps and UI.
-                            </p>
-                        </div>
-                        <img src="Resources/Screenshots/projects/ReBriefcase/1.png">
-                        <img src="Resources/Screenshots/projects/ReBriefcase/2.png">
-                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
-                            <p>
-                                ReBriefcase also automatically renames "folder" to "briefcase" during the transormation process, to save you a few seconds of doing it yourself. It only does this with the word "folder", so it won't alter that name you gave the folder before hand.
-                            </p>
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
-                            <p>
-                                Briefcases are not linked automatically, as this could lead to folder merging issues no one wants.
-                            </p>
-                            <p>
-                                To link briefcases together, click the button labeled "Link to group". This will open a folder selection menu. Simply navigate to the briefcase you want to link and click "select folder". ReBriefcase will then link the two briefcases together in it's database.
-                            </p>
-                            <p>
-                                ReBriefcase will make sure the folder you selected is compatible before attempting to link it to the briefcase, so you're safe from accidential confirmations.
-                            </p>
-                            <p>
-                                ReBriefcase allows for as many briefcases to be linked together as you want or need, but keep in mind ReBriefcase has only been tested with at most 3 briefcases together.
-                            </p>
-                        </div>
-                        <img src="Resources/Screenshots/projects/ReBriefcase/3.png">
-                        <img src="Resources/Screenshots/projects/ReBriefcase/4.png">
-                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
-                            <p>
-                                Once at least 2 briefcases are linked together, ReBriefcase will allow you to sync them together. Simply click the button labeled "Sync with peers".
-                            </p>
-                        </div>
-                    </div>
-                    <div style="height: 50px;" id="syncengine"></div>
-                    <div class="NewsPaneDivider"></div>
-                    <h1 class="ExplinationHeader">ReBriefcase's Sync Engine</h1>
-                    <div class="NewsPaneDivider"></div>
-                    <div style="height: 50px;"></div>
-                    <div class="InfoRow">
-                        <img src="Resources/Screenshots/projects/ReBriefcase/5.png">
-                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
-                            <p>
-                                ReBriefcase has 2 versions of it's sync engine, a "safe" method and an "unsafe" method
-                            </p>
-                            <p>
-                                The unsafe method is what ReBriefcase will use when you first sync a peer group. This method is used only when ReBriefcase's database doesn't have a reference frame of the file system.
-                            </p>
-                            <p>
-                                If you see this popup, it is best to sync the briefcases manually to prevent data loss, then click "yes". This method prioritizes larger file versions, regardless of when they were edited.
-                            </p>
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
-                            <p>
-                                ReBriefcase also copies over time metadata, so all copies of a file share the same creation and edit dates.
-                            </p>
-                        </div>
-                        <img src="Resources/Screenshots/projects/ReBriefcase/6.png">
-                        <img src="Resources/Screenshots/projects/ReBriefcase/9.png">
-                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
-                            <p>
-                                The time it takes for the briefcases to sync depends on a few factors, such as the amount of files being synced, their size, and if there are conflicts.
-                            </p>
-                            <p>
-                                For smaller syncs, the engine can get it done in a fraction of a second, and for larger jobs, the engine can take a few seconds to sort everything.
-                            </p>
-                            <p>
-                                While ReBriefcase is generally fast, it is not as efficiant as it can be. ReBriefcase will be getting faster as updates roll out.
-                            </p>
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
-                            <p>
-                                If you don't want to keep syncing 2 briefcases together, or if you want to archive a copy of a briefcase, you can simply click the button labeled "Unlink from group".
-                            </p>
-                            <p>
-                                This will remove the connection to the database from the briefcase's metadata, but it keeps the rest. So you can relink again later.
-                            </p>
-                        </div>
-                        <img src="Resources/Screenshots/projects/ReBriefcase/10.png">
-                    </div>
-                    <div style="height: 50px;" id="conflict"></div>
-                    <div class="NewsPaneDivider"></div>
-                    <h1 class="ExplinationHeader">ReBriefcase's Conflict Detection</h1>
-                    <div class="NewsPaneDivider"></div>
-                    <div style="height: 50px;"></div>
-                    <div class="InfoRow">
-                        <img src="Resources/Screenshots/projects/ReBriefcase/8.png">
                         
-                        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
-                            <p>
-                                ReBriefcase's conflict detection works differently compared to Windows' native briefcases.
-                            </p>
-                            <p>
-                                The goal was to make it as intuitive as possible, while still being easy to work with.
-                            </p>
-                            <p>
-                                If you have any suggestions about how I can improve this UI, feel free to tell me about it on ReBriefcase's GitHub repository! You can find my GitHub in the contacts page.
-                            </p>
+                        <div class="Screenshot">
+                            <img src="CSS/Resources//Screenshots/ReBriefcase/4.PNG">
+                            <div class="ScreenshotContext">
+                                <p>
+                                    An example of a successful sync between two peers.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="Screenshot">
+                            <img src="CSS/Resources//Screenshots/ReBriefcase/5.PNG">
+                            <div class="ScreenshotContext">
+                                <p>
+                                    Conflicts are when the data of 2 or more copies of the same file have been edited in different ways. ReBriefcase catches this and prompts you which file you want to keep.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="JS/page_init.js"></script>
+    <script src="JS/banner_ani.js"></script>
     <script src="JS/github_info.js"></script>
 </body>
