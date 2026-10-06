@@ -4,7 +4,7 @@
     background-size: cover;
     background-position-y: center;
     position: relative;
-    z-index: -2;
+    z-index: 0;
     overflow: hidden;
 }
 
@@ -22,6 +22,16 @@
     padding: 15px;
     aspect-ratio: 1/1;
     filter: drop-shadow(0px 0px 10px black);
+}
+
+@keyframes brandingImageHop {
+    0%      {rotate: 0deg;}
+    100%    {rotate: 360deg;}
+}
+
+.Branding img:hover {
+    animation-name: brandingImageHop;
+    animation-duration: 1s;
 }
 
 .BrandingText {
