@@ -11,6 +11,7 @@ const IconSets = {
     misc : [
         "CSS/Resources/Icons/Software/Hero7.png",
         "CSS/Resources/Icons/Store.png",
+        "CSS/Resources/Icons/Software/StabilizedKerbol.png",
     ],
     contact : [
         "CSS/Resources/Icons/Contact.png",
