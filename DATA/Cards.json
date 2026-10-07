@@ -70,7 +70,7 @@
 
     "recent" : {
         "stabilzedkerbol" : {
-            "link" : "misc.stabilizedkerbol.html",
+            "link" : "misc.stabilizedKerbol.html",
             "external" : false,
             "name" : "Stabilized Kerbol",
             "banner" : "CSS/Resources/Banners/StabilizedKerbol.jpg",
