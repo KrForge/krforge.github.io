@@ -47,7 +47,7 @@
             "desc" : "The Windows 10 wallpaper, modified to use the Windows logo shape seen in Windows 7."
         },
         "stabilzedkerbol" : {
-            "link" : "misc.stabilizedkerbol.html",
+            "link" : "misc.stabilizedKerbol.html",
             "external" : false,
             "name" : "Stabilized Kerbol",
             "banner" : "CSS/Resources/Banners/StabilizedKerbol.jpg",
