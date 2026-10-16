@@ -62,14 +62,15 @@ async function loadCards() {
 
     containers.forEach(container => {
         const type = container.dataset.cardType;
-        const cardSet = cardJson[type];
         
-        if (cardSet) {
-            Object.values(cardSet).forEach(card => {
-
+        Object.values(cardJson).forEach(card => {
+            
+            const parents = card["parents"];
+            
+            if (parents.includes(type)) {
                 drawCard(container, card["link"], card["external"], card["name"], card["banner"], card["img"], card["desc"]);
-            })
-        }
+            }
+        })
     })
 }
 
