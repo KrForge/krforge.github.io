@@ -1,5 +1,6 @@
 :root {
     --brand-color : #531bbb;
+    --brand-color-light : #6d2de4;
     --brand-color-dark : #150d3f;
 
     --banner-height : calc(200px + var(--topbar-height));
